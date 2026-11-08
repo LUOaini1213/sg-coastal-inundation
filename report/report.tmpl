@@ -119,7 +119,8 @@ stations with an exit within ~60 m of flooding in that case: {{mrt_names_100_ssp
 | No connectivity check | {{naive_100_ssp585_2100}} |
 
 **2-D model.** Bathtub {{m_bath}} km²; model {{m_base}} km² ({{m_ratio}}); peak held constant {{m_steady}} km²
-({{m_steady_ratio}}). Halving the time step changes the area by {{m_alpha_diff}}, a 90 m grid by {{m_dx90_diff}};
+({{m_steady_ratio}}). Halving the time step changes the area by {{m_alpha_diff}}; averaging the DEM to 60 m / 90 m loses
+{{m_dx60_diff}} / {{m_dx90_diff}} of it (narrow low channels are smoothed away), so the result depends on the 30 m terrain;
 Manning n from 0.02 to 0.06 gives {{m_n_0.02}} to {{m_n_0.06}} km².
 
 ![2-D model against the bathtub](../outputs/figures/model_vs_bathtub.png){width=92%}

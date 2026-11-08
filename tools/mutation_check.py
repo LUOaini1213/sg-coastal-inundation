@@ -55,6 +55,8 @@ MUTANTS = [
      "hf = np.maximum(eta[:, 1:], eta[:, :-1]) - np.minimum(z[:, 1:], z[:, :-1])", TI, "face flow depth uses min bed"),
     (S + "inertial.py", "(3.0 / 7.0)", "(3.0 / 5.0)", TI, "analytical solution exponent"),
     (S + "inertial.py", "alpha * dx / np.sqrt", "4 * alpha * dx / np.sqrt", TI, "time step violates CFL"),
+    (S + "inertial.py", "0.5 * (1.0 - theta) * (q[:, :-2] + q[:, 2:])", "0.0 * (q[:, :-2] + q[:, 2:])", TI,
+     "theta blending drops neighbour discharges"),
 ]
 
 

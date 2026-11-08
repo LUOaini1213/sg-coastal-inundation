@@ -87,3 +87,33 @@ def test_first_step_flux_uses_higher_bed_for_flow_depth():
     r = M.run(z, dx, 0.03, np.zeros_like(z, bool), None, dt, h0=h0, dt_max=dt)
     q = M.G * 0.5 * dt * (1.5 - 0.1) / dx            # friction term vanishes because q0 = 0
     assert h0[0, 0] - r.h[0, 0] == pytest.approx(q * dt / dx, rel=1e-6)
+
+
+def _rough():
+    rng = np.random.default_rng(1)
+    z = rng.uniform(0, 1.5, (60, 60))
+    z[rng.random((60, 60)) < 0.15] += rng.uniform(3, 15)      # building-like blocks in a DSM
+    z[:, :3] = -1.0
+    b = np.zeros_like(z, bool)
+    b[:, :3] = True
+    return z, b
+
+
+def test_ramped_cold_start_reproduces_bathtub_without_overshoot():
+    from sgci import inundation
+    z, b = _rough()
+    fill = inundation.fill_level(z, b)
+    h0 = np.where((fill < 0.5) & ~b, np.maximum(0.5 - z, 0), 0)
+    r = M.run(z, 30.0, 0.035, b, lambda t: 0.5 + 1.5 * min(1, t / 3600), 4 * 3600.0, h0=h0)
+    eta = np.where(r.hmax > 0.01, z + r.hmax, -9)
+    assert eta[:, 3:].max() < 2.0 + 0.02
+    bath = (fill < 2.0) & (2.0 - z >= 0.05) & ~b
+    assert ((r.hmax > 0.05) & ~b).sum() == bath.sum()
+
+
+def test_theta_blending_damps_dam_break_overshoot():
+    z, b = _rough()
+    plain = M.run(z, 30.0, 0.035, b, lambda t: 2.0, 2 * 3600.0, theta=1.0)
+    damped = M.run(z, 30.0, 0.035, b, lambda t: 2.0, 2 * 3600.0)
+    top = lambda r: np.where(r.hmax > 0.01, z + r.hmax, -9)[:, 3:].max()
+    assert top(damped) < top(plain) - 0.3

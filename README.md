@@ -31,18 +31,18 @@ All 14 scenarios (10- and 100-year events × 2020 / 3 SSPs × 2050 / 2100) are i
 
 What the numbers say, plainly:
 
-* **Most of the flooded area is on offshore islands and recent reclamation**, not on the
+* **About half of the flooded area is on offshore islands and recent reclamation**, not on the
   populated mainland: for the 100-yr SSP5-8.5 2100 case 53% of the flooded area is in
   the three island planning areas, and the largest planning-area totals are North-Eastern Islands (3.7 km²), Western Islands (3.2 km²), Queenstown (1.6 km²).
   Residents near flooded cells number in the low thousands, because Singapore's mainland
   coast sits on raised reclamation platforms (the DSM also biases ground upward; see limitations).
 * **Hydraulic connectivity matters:** a naive "everything below the water level" bathtub gives
   36.3 km² for the same case, 2.6× the connected result.
-* **The vertical datum matters even more.** Shifting the DEM-to-MSL offset by ±0.3 m moves the
+* **The vertical datum is the dominant uncertainty.** Shifting the DEM-to-MSL offset by ±0.3 m moves the
   2100 SSP5-8.5 100-yr area from 10.6 to 18.1 km²; ignoring the
   offset altogether (treating the EGM2008 geoid as mean sea level) gives 5.6 km².
 * **Event duration matters little at the modelled site:** in the 2-D sub-domain a realistic
-  72-hour storm-tide hydrograph floods 96% of the bathtub extent (see §4).
+  72-hour storm-tide hydrograph floods 98% of the bathtub extent (see §4).
 
 ## Method
 
@@ -126,33 +126,42 @@ extremes; this study does not reproduce those.)
 ### 4. A genuine numerical model: 2-D local-inertial storm tide
 
 `src/sgci/inertial.py` solves the local-inertial shallow-water equations (Bates et al. 2010;
-de Almeida et al. 2012): face discharges with semi-implicit Manning friction, cell-centred
-depths, CFL-limited time step, prescribed water level in sea cells, walls at inland water.
+de Almeida et al. 2012): face discharges with semi-implicit Manning friction and θ = 0.7
+neighbour weighting (without it, a dam-break test on synthetic building-like terrain pushed
+water well above the boundary level; see `test_theta_blending_damps_dam_break_overshoot`),
+cell-centred depths, CFL-limited time step, prescribed water
+level in sea cells, walls at inland water.
 
 * **Verification:** against the analytical moving-front solution (Hunter et al. 2005) at
-  n = 0.03 the depth RMSE is 7.8 cm (3.3% of the maximum depth); a lake at rest
+  n = 0.03 the depth RMSE is 8.0 cm (3.4% of the maximum depth); a lake at rest
   stays at rest to 1e-9 m; volume is conserved (largest relative mass error in the runs
-  below 3e-14).
-* **Experiment:** a 180 × 180-cell mainland sub-domain (103.981–104.031°E, 1.376–1.426°N) centred on the densest
-  bathtub flooding, forced by the observed 1999-12-23 storm-tide hydrograph (±36 h, detrended)
+  below 7e-13).
+* **Experiment:** a 180 × 180-cell mainland sub-domain (103.744–103.794°E, 1.255–1.305°N, the south-west waterfront
+  around Pasir Panjang) centred on the densest mainland bathtub flooding, forced by the observed 1999-12-23 storm-tide hydrograph (±36 h, detrended)
   raised so that its peak equals the 100-yr SSP5-8.5 2100 level (2.66 m).
-  Cells count as flooded at ≥ 5 cm maximum depth.
+  Cold start: land connected to the sea below the initial stage starts wet, so the run does not
+  begin with an artificial dam break. Cells count as flooded at ≥ 5 cm maximum depth. In every
+  run the highest water level reached on land is at most 0.03 m above the peak stage.
 
 | Run | Flooded (km²) |
 |---|---|
-| Bathtub, same sub-domain | 3.27 |
-| 2-D model, base (n = 0.035, 30 m, α = 0.7) | 3.14 |
-| Peak level held constant (bathtub assumption) | 3.30 |
-| Half time step (α = 0.35) | 3.14 |
-| n = 0.02 / n = 0.06 | 3.22 / 3.00 |
-| 60 m / 90 m grid | 3.02 / 2.98 |
+| Bathtub, same sub-domain | 1.57 |
+| 2-D model, base (n = 0.035, 30 m, α = 0.7) | 1.55 |
+| Peak level reached over 6 h, then held (bathtub assumption) | 1.57 |
+| Half time step (α = 0.35) | 1.54 |
+| n = 0.02 / n = 0.06 | 1.56 / 1.54 |
+| 60 m / 90 m grid | 1.23 / 0.97 |
 
-The model floods 96% of the bathtub area; holding the peak level constant gives
-101%, i.e. the model reproduces the bathtub when the bathtub's own assumption is imposed,
-and the 4% gap is the effect of finite event duration. Halving the time step changes the
-area by 0.0%; tripling the cell size changes it by 5.0%. Conclusion for this site:
-the low ground is close to the shore and fills within one high tide, so the bathtub is only
-mildly conservative here — that is a site result, not a general one.
+The model floods 98% of the bathtub area; holding the peak level constant gives
+100%, i.e. the model reproduces the bathtub when the bathtub's own assumption is imposed,
+and the 2% gap is the effect of finite event duration. Halving the time step changes the
+area by 0.5% (time-step converged) and Manning n from 0.02 to 0.06 by less than 3 %.
+The grid is the sensitive choice: re-running on the DEM averaged to 60 m / 90 m loses
+20% / 37% of the flooded area, because averaging raises narrow low channels and
+shifts the coastline. So the 30 m result is not grid-converged in the usual sense — coarser
+grids change the terrain itself and are not a substitute. Conclusion for this site: the low
+ground is close to the shore and fills within one high tide, so the bathtub is only mildly
+conservative here — a site result, not a general one.
 
 ![Model vs bathtub](outputs/figures/model_vs_bathtub.png)
 
@@ -173,7 +182,8 @@ mildly conservative here — that is a site result, not a general one.
    metre-level vertical error in built-up and vegetated areas; buildings and canopy make ground
    look higher (flooding under-estimated), while radar noise on flat terminals and reclaimed
    land can make it look lower. Land reclaimed after acquisition (Tuas, Pulau Tekong polder) is
-   wrong or appears as water.
+   wrong or appears as water. The "exactly flat patch = water body" rule can also catch edited
+   land surfaces (some appear inside port terminals); those cells are excluded, not flooded.
 2. **Datum:** the 1.15 m geoid-to-MSL offset comes from a global altimetry MDT that is
    least reliable at the coast; ±0.3 m changes the headline area by tens of percent.
 3. **Not modelled:** sea walls, revetments, tidal gates, pumps and drains; waves and wave

@@ -126,23 +126,28 @@ extremes; this study does not reproduce those.)
 ### 4. A genuine numerical model: 2-D local-inertial storm tide
 
 `src/sgci/inertial.py` solves the local-inertial shallow-water equations (Bates et al. 2010;
-de Almeida et al. 2012): face discharges with semi-implicit Manning friction, cell-centred
-depths, CFL-limited time step, prescribed water level in sea cells, walls at inland water.
+de Almeida et al. 2012): face discharges with semi-implicit Manning friction and θ = 0.7
+neighbour weighting (without it, a dam-break test on synthetic building-like terrain pushed
+water well above the boundary level; see `test_theta_blending_damps_dam_break_overshoot`),
+cell-centred depths, CFL-limited time step, prescribed water
+level in sea cells, walls at inland water.
 
 * **Verification:** against the analytical moving-front solution (Hunter et al. 2005) at
   n = 0.03 the depth RMSE is {{hunter_rmse}} cm ({{hunter_rel}} of the maximum depth); a lake at rest
   stays at rest to 1e-9 m; volume is conserved (largest relative mass error in the runs
   below {{m_mass}}).
-* **Experiment:** a 180 × 180-cell mainland sub-domain ({{m_box}}) centred on the densest
-  bathtub flooding, forced by the observed 1999-12-23 storm-tide hydrograph (±36 h, detrended)
+* **Experiment:** a 180 × 180-cell mainland sub-domain ({{m_box}}, the south-west waterfront
+  around Pasir Panjang) centred on the densest mainland bathtub flooding, forced by the observed 1999-12-23 storm-tide hydrograph (±36 h, detrended)
   raised so that its peak equals the 100-yr SSP5-8.5 2100 level ({{wl_100_ssp585_2100}} m).
-  Cells count as flooded at ≥ 5 cm maximum depth.
+  Cold start: land connected to the sea below the initial stage starts wet, so the run does not
+  begin with an artificial dam break. Cells count as flooded at ≥ 5 cm maximum depth. In every
+  run the highest water level reached on land is at most {{m_overshoot}} m above the peak stage.
 
 | Run | Flooded (km²) |
 |---|---|
 | Bathtub, same sub-domain | {{m_bath}} |
 | 2-D model, base (n = 0.035, 30 m, α = 0.7) | {{m_base}} |
-| Peak level held constant (bathtub assumption) | {{m_steady}} |
+| Peak level reached over 6 h, then held (bathtub assumption) | {{m_steady}} |
 | Half time step (α = 0.35) | {{m_alpha_0.35}} |
 | n = 0.02 / n = 0.06 | {{m_n_0.02}} / {{m_n_0.06}} |
 | 60 m / 90 m grid | {{m_dx_60}} / {{m_dx_90}} |
@@ -150,9 +155,13 @@ depths, CFL-limited time step, prescribed water level in sea cells, walls at inl
 The model floods {{m_ratio}} of the bathtub area; holding the peak level constant gives
 {{m_steady_ratio}}, i.e. the model reproduces the bathtub when the bathtub's own assumption is imposed,
 and the {{m_reduction}} gap is the effect of finite event duration. Halving the time step changes the
-area by {{m_alpha_diff}}; tripling the cell size changes it by {{m_dx90_diff}}. Conclusion for this site:
-the low ground is close to the shore and fills within one high tide, so the bathtub is only
-mildly conservative here — that is a site result, not a general one.
+area by {{m_alpha_diff}} (time-step converged) and Manning n from 0.02 to 0.06 by less than 3 %.
+The grid is the sensitive choice: re-running on the DEM averaged to 60 m / 90 m loses
+{{m_dx60_diff}} / {{m_dx90_diff}} of the flooded area, because averaging raises narrow low channels and
+shifts the coastline. So the 30 m result is not grid-converged in the usual sense — coarser
+grids change the terrain itself and are not a substitute. Conclusion for this site: the low
+ground is close to the shore and fills within one high tide, so the bathtub is only mildly
+conservative here — a site result, not a general one.
 
 ![Model vs bathtub](outputs/figures/model_vs_bathtub.png)
 
@@ -173,7 +182,8 @@ mildly conservative here — that is a site result, not a general one.
    metre-level vertical error in built-up and vegetated areas; buildings and canopy make ground
    look higher (flooding under-estimated), while radar noise on flat terminals and reclaimed
    land can make it look lower. Land reclaimed after acquisition (Tuas, Pulau Tekong polder) is
-   wrong or appears as water.
+   wrong or appears as water. The "exactly flat patch = water body" rule can also catch edited
+   land surfaces (some appear inside port terminals); those cells are excluded, not flooded.
 2. **Datum:** the {{mdt}} m geoid-to-MSL offset comes from a global altimetry MDT that is
    least reliable at the coast; ±0.3 m changes the headline area by tens of percent.
 3. **Not modelled:** sea walls, revetments, tidal gates, pumps and drains; waves and wave

@@ -2,73 +2,81 @@
  "scenario": "rp100_ssp585_2100",
  "wl": 2.659,
  "box_rows_cols": [
-  195,
-  1409,
+  631,
+  555,
   180
  ],
  "box_lonlat": [
-  103.9814,
-  1.3758,
-  104.0314,
-  1.4258
+  103.7442,
+  1.2547,
+  103.7942,
+  1.3047
  ],
  "hydrograph_hours": 72.0,
  "depth_min_m": 0.05,
- "bathtub_area_km2": 3.268,
+ "ramp_hours": 6.0,
+ "bathtub_area_km2": 1.572,
  "runs": {
   "base": {
-   "area_km2": 3.1383,
-   "volume_m3": 4117328.104621821,
-   "steps": 65090,
-   "seconds": 374.3,
-   "mass_error_rel": 1.1794676365118396e-14
+   "area_km2": 1.5471,
+   "volume_m3": 2661604.2086731405,
+   "steps": 109391,
+   "seconds": 880.7,
+   "max_water_level": 2.678,
+   "mass_error_rel": 6.517481774047107e-14
   },
   "steady": {
-   "area_km2": 3.2958,
-   "volume_m3": 4596867.839654355,
-   "steps": 75456,
-   "seconds": 259.6,
-   "mass_error_rel": 1.2473262276990771e-14
+   "area_km2": 1.5723,
+   "volume_m3": 2694911.5571147627,
+   "steps": 118308,
+   "seconds": 1015.3,
+   "max_water_level": 2.675,
+   "mass_error_rel": 7.010199283934763e-13
   },
   "alpha_0.35": {
-   "area_km2": 3.1383,
-   "volume_m3": 4110967.6413029297,
-   "steps": 130177,
-   "seconds": 268.0,
-   "mass_error_rel": 2.518945649396843e-14
+   "area_km2": 1.5399,
+   "volume_m3": 2650671.873822705,
+   "steps": 218781,
+   "seconds": 1502.6,
+   "max_water_level": 2.691,
+   "mass_error_rel": 4.349896433912484e-14
   },
   "n_0.02": {
-   "area_km2": 3.2229,
-   "volume_m3": 4302275.970738196,
-   "steps": 66020,
-   "seconds": 122.2,
-   "mass_error_rel": 9.042601748104904e-15
+   "area_km2": 1.5642,
+   "volume_m3": 2676638.8175127245,
+   "steps": 109391,
+   "seconds": 960.3,
+   "max_water_level": 2.678,
+   "mass_error_rel": 3.921163347753844e-14
   },
   "n_0.06": {
-   "area_km2": 3.0015,
-   "volume_m3": 3993100.88475261,
-   "steps": 65195,
-   "seconds": 117.7,
-   "mass_error_rel": 1.7865363394027902e-14
+   "area_km2": 1.5363,
+   "volume_m3": 2649866.8206671076,
+   "steps": 109391,
+   "seconds": 940.4,
+   "max_water_level": 2.675,
+   "mass_error_rel": 4.384702725895043e-14
   },
   "dx_60": {
-   "area_km2": 3.0204,
-   "volume_m3": 3886480.252462795,
-   "steps": 31057,
-   "seconds": 17.5,
-   "mass_error_rel": 1.1813914239882784e-14
+   "area_km2": 1.2312,
+   "volume_m3": 1785927.40131016,
+   "steps": 45528,
+   "seconds": 112.8,
+   "max_water_level": 2.687,
+   "mass_error_rel": 2.1455522579880335e-14
   },
   "dx_90": {
-   "area_km2": 2.9808,
-   "volume_m3": 3867836.809686949,
-   "steps": 25920,
-   "seconds": 9.0,
-   "mass_error_rel": 5.014604675061695e-15
+   "area_km2": 0.972,
+   "volume_m3": 1395752.6254439454,
+   "steps": 29162,
+   "seconds": 46.1,
+   "max_water_level": 2.661,
+   "mass_error_rel": 1.2875611570679502e-14
   }
  },
- "base_vs_bathtub_ratio": 0.96,
- "steady_vs_bathtub_ratio": 1.009,
- "cells_both": 3472,
- "cells_bathtub_only": 159,
- "cells_model_only": 15
+ "base_vs_bathtub_ratio": 0.984,
+ "steady_vs_bathtub_ratio": 1.0,
+ "cells_both": 1719,
+ "cells_bathtub_only": 28,
+ "cells_model_only": 0
 }

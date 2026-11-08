@@ -49,18 +49,34 @@ def stage_fn(hours, wl):
     return lambda s: float(np.interp(s, t - t[0], wl))
 
 
+RAMP_H = 6.0
+
+
 def run_case(z, sea, inland, sg, dx, n, hyd_t, hyd_wl, alpha=0.7, steady=False):
+    """Cold start: land already wet up to the initial stage (connected bathtub), so the run
+    does not begin with an artificial dam break. 'steady' ramps linearly from the initial stage
+    to the peak over RAMP_H hours and then holds it."""
+    s0, peak = float(hyd_wl[0]), float(hyd_wl.max())
     if steady:
-        st = (lambda s, v=float(hyd_wl.max()): v)
+        st = (lambda s: s0 + (peak - s0) * min(1.0, s / (RAMP_H * 3600.0)))
     else:
         st = stage_fn(hyd_t, hyd_wl)
-    h0 = None
+    fill = inundation.fill_level(z, sea, cap=s0 + 0.01)
+    h0 = np.where((fill < s0) & ~sea, np.maximum(s0 - z, 0.0), 0.0)
     t0 = time.time()
     r = inertial.run(z, dx, n, sea, st, t_end=(hyd_t[-1] - hyd_t[0]) * 3600.0, alpha=alpha, h0=h0)
     wet = (r.hmax >= DEPTH_MIN) & sg
+    eta_max = float(np.max(np.where(r.hmax > 0.01, z + r.hmax, -np.inf)[~sea]))
     return {"area_km2": float(wet.sum() * dx * dx / 1e6), "volume_m3": float((r.hmax * sg).sum() * dx * dx),
-            "steps": r.steps, "seconds": round(time.time() - t0, 1),
-            "mass_error_rel": float(abs(r.volume_error) / max(abs(r.volume_in), 1.0))}, r
+            "steps": r.steps, "seconds": round(time.time() - t0, 1), "max_water_level": round(eta_max, 3),
+            "mass_error_rel": float(abs(r.volume_error) / max(abs(r.volume_in), 1.0))}, r.hmax
+
+
+def _job(args):
+    name, kw = args
+    out, hmax = run_case(*kw["grid"], kw["n"], kw["hyd_t"], kw["hyd_wl"], alpha=kw.get("alpha", 0.7),
+                         steady=kw.get("steady", False))
+    return name, out, (hmax if name == "base" else None)
 
 
 def main(G, fill, scen, tide_res):
@@ -78,42 +94,48 @@ def main(G, fill, scen, tide_res):
     hyd = pd.read_csv(OUT / "hydrograph_1999_12_23.csv")
     hyd_t = hyd["hour"].to_numpy(float)
     hyd_wl = hyd["wl_m"].to_numpy() + (wl - hyd["wl_m"].max())
-    # bathtub reference inside the box, same depth threshold
-    bt = (fill[sl] < wl - DEPTH_MIN) & sg
+    # bathtub reference inside the box: connected to the sea and at least DEPTH_MIN deep
+    bt = (fill[sl] < wl) & (wl - z >= DEPTH_MIN) & sg
     bath_km2 = float(bt.sum() * dx * dx / 1e6)
     res = {"scenario": HEADLINE, "wl": wl, "box_rows_cols": [r0, c0, BOX_CELLS],
            "box_lonlat": [round(tr.c + c0 * tr.a, 4), round(tr.f + (r0 + BOX_CELLS) * tr.e, 4),
                           round(tr.c + (c0 + BOX_CELLS) * tr.a, 4), round(tr.f + r0 * tr.e, 4)],
-           "hydrograph_hours": float(hyd_t[-1] - hyd_t[0]), "depth_min_m": DEPTH_MIN,
+           "hydrograph_hours": float(hyd_t[-1] - hyd_t[0]), "depth_min_m": DEPTH_MIN, "ramp_hours": RAMP_H,
            "bathtub_area_km2": round(bath_km2, 3), "runs": {}}
-    cases = {"base": dict(n=N_BASE), "steady": dict(n=N_BASE, steady=True),
-             "alpha_0.35": dict(n=N_BASE, alpha=0.35), "n_0.02": dict(n=0.02), "n_0.06": dict(n=0.06)}
-    rbase = None
-    for name, kw in cases.items():
-        out, r = run_case(z, sea, inland, sg, dx, kw["n"], hyd_t, hyd_wl, alpha=kw.get("alpha", 0.7),
-                          steady=kw.get("steady", False))
-        res["runs"][name] = out
-        print(name, out)
-        if name == "base":
-            rbase = r
+    fine = (z, sea, inland, sg, dx)
+    coarse = {}
     for k in (2, 3):
         zc = inertial.coarsen(z, k, "mean")
         seac = inertial.coarsen(sea.astype(float), k, "mean") > 0.5
         inlc = inertial.coarsen(inland.astype(float), k, "mean") > 0.5
         sgc = inertial.coarsen(sg.astype(float), k, "mean") > 0.5
-        out, _ = run_case(zc, seac, inlc & ~seac, sgc & ~seac, dx * k, N_BASE, hyd_t, hyd_wl)
-        res["runs"][f"dx_{int(dx * k)}"] = out
-        print(k, out)
+        coarse[k] = (zc, seac, inlc & ~seac, sgc & ~seac, dx * k)
+    common = dict(hyd_t=hyd_t, hyd_wl=hyd_wl)
+    jobs = [("base", dict(grid=fine, n=N_BASE, **common)),
+            ("steady", dict(grid=fine, n=N_BASE, steady=True, **common)),
+            ("alpha_0.35", dict(grid=fine, n=N_BASE, alpha=0.35, **common)),
+            ("n_0.02", dict(grid=fine, n=0.02, **common)),
+            ("n_0.06", dict(grid=fine, n=0.06, **common)),
+            ("dx_60", dict(grid=coarse[2], n=N_BASE, **common)),
+            ("dx_90", dict(grid=coarse[3], n=N_BASE, **common))]
+    from concurrent.futures import ProcessPoolExecutor
+    rbase_hmax = None
+    with ProcessPoolExecutor(max_workers=len(jobs)) as ex:
+        for name, out, hm in ex.map(_job, jobs):
+            res["runs"][name] = out
+            print(name, out, flush=True)
+            if hm is not None:
+                rbase_hmax = hm
     b = res["runs"]["base"]["area_km2"]
     res["base_vs_bathtub_ratio"] = round(b / bath_km2, 3) if bath_km2 else None
     res["steady_vs_bathtub_ratio"] = round(res["runs"]["steady"]["area_km2"] / bath_km2, 3) if bath_km2 else None
     # agreement maps (cell counts) for the base run
-    mb = (rbase.hmax >= DEPTH_MIN) & sg
+    mb = (rbase_hmax >= DEPTH_MIN) & sg
     res["cells_both"] = int((mb & bt).sum())
     res["cells_bathtub_only"] = int((bt & ~mb).sum())
     res["cells_model_only"] = int((mb & ~bt).sum())
     (OUT / "inertial.json").write_text(json.dumps(res, indent=1) + "\n", encoding="utf8")
-    np.save(ROOT / "data_cache" / "model_hmax.npy", rbase.hmax)
+    np.save(ROOT / "data_cache" / "model_hmax.npy", rbase_hmax)
     # web layer: polygons of model-flooded vs bathtub-only cells
     import rasterio.features
     from affine import Affine

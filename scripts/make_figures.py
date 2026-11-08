@@ -22,6 +22,7 @@ from sgci import eva  # noqa: E402
 OUT = ROOT / "outputs"
 FIG = OUT / "figures"
 INK, INK2, GRID = "#0b0b0b", "#52514e", "#e3e2de"
+INLAND = "#c9c4b8"
 SSP_COL = {"ssp126": "#2a78d6", "ssp245": "#1baf7a", "ssp585": "#eb6834"}
 SSP_LABEL = {"ssp126": "SSP1-2.6", "ssp245": "SSP2-4.5", "ssp585": "SSP5-8.5"}
 plt.rcParams.update({"font.size": 9.5, "axes.edgecolor": INK2, "axes.labelcolor": INK, "xtick.color": INK2,
@@ -117,11 +118,9 @@ def fig_maps():
     land = np.where(G["sea"], np.nan, 1.0)
     ax.imshow(land, extent=ext, cmap=matplotlib.colors.ListedColormap(["#ecebe7"]), interpolation="nearest")
     water = np.where(G["inland_zero"], 1.0, np.nan)
-    ax.imshow(water, extent=ext, cmap=matplotlib.colors.ListedColormap(["#b7d3f6"]), interpolation="nearest")
-    cols = ["#1c5cab", "#5598e7", "#9ec5f4"]
-    for col, sid in zip(cols, ["rp100_2020", "rp100_ssp245_2100", "rp100_ssp585_2100"][::-1][::-1]):
-        pass
-    order = [("rp100_ssp585_2100", "#9ec5f4"), ("rp100_ssp245_2100", "#5598e7"), ("rp100_2020", "#1c5cab")]
+    ax.imshow(water, extent=ext, cmap=matplotlib.colors.ListedColormap([INLAND]), interpolation="nearest")
+    ax.plot([], [], "s", color=INLAND, ms=8, label="Inland water (reservoirs; held at regulated level)")
+    order = [("rp100_ssp585_2100", "#86b6ef"), ("rp100_ssp245_2100", "#3987e5"), ("rp100_2020", "#184f95")]
     for sid, col in order:
         m = (fill < sc[sid]["wl"]) & G["sg"]
         ax.imshow(np.where(m, 1.0, np.nan), extent=ext, cmap=matplotlib.colors.ListedColormap([col]),
@@ -146,21 +145,22 @@ def fig_maps():
     hmax = np.load(cache / "model_hmax.npy")
     r0, c0, n = m["box_rows_cols"]
     sl = (slice(r0, r0 + n), slice(c0, c0 + n))
-    bt = (fill[sl] < m["wl"] - m["depth_min_m"]) & G["sg"][sl]
+    bt = (fill[sl] < m["wl"]) & (m["wl"] - G["z"][sl] >= m["depth_min_m"]) & G["sg"][sl]
     mb = (hmax >= m["depth_min_m"]) & G["sg"][sl]
-    fig, axs = plt.subplots(1, 2, figsize=(9, 4.4))
+    fig, axs = plt.subplots(1, 2, figsize=(9.6, 4.6), layout="constrained")
     sub_ext = [tr.c + c0 * tr.a, tr.c + (c0 + n) * tr.a, tr.f + (r0 + n) * tr.e, tr.f + r0 * tr.e]
     base = np.where(G["sea"][sl], np.nan, 1.0)
     for a in axs:
         a.imshow(base, extent=sub_ext, cmap=matplotlib.colors.ListedColormap(["#ecebe7"]))
         a.imshow(np.where(G["inland_zero"][sl], 1.0, np.nan), extent=sub_ext,
-                 cmap=matplotlib.colors.ListedColormap(["#b7d3f6"]))
+                 cmap=matplotlib.colors.ListedColormap([INLAND]))
+        a.ticklabel_format(useOffset=False)
         a.set_aspect("equal")
         a.grid(False)
         a.tick_params(labelsize=7)
     d = np.where(mb, hmax, np.nan)
     im = axs[0].imshow(d, extent=sub_ext, cmap="Blues", vmin=0, vmax=2.0)
-    fig.colorbar(im, ax=axs[0], fraction=0.046, label="Max depth (m)")
+    fig.colorbar(im, ax=axs[0], fraction=0.046, pad=0.02, label="Max depth (m)")
     axs[0].set_title(f"2-D local-inertial model: {m['runs']['base']['area_km2']:.2f} km²", fontsize=9.5, loc="left")
     cls = np.full(bt.shape, np.nan)
     cls[bt & mb] = 0

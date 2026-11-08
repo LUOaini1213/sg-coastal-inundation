@@ -175,7 +175,12 @@ def values() -> dict:
     V["m_steady_ratio"] = pct(mo["steady_vs_bathtub_ratio"])
     V["m_reduction"] = pct(1 - mo["base_vs_bathtub_ratio"])
     V["m_alpha_diff"] = pct(abs(runs["alpha_0.35"]["area_km2"] / runs["base"]["area_km2"] - 1), 1)
-    V["m_dx90_diff"] = pct(abs(runs["dx_90"]["area_km2"] / runs["base"]["area_km2"] - 1), 1)
+    V["m_dx90_diff"] = pct(abs(runs["dx_90"]["area_km2"] / runs["base"]["area_km2"] - 1), 0)
+    V["m_dx60_diff"] = pct(abs(runs["dx_60"]["area_km2"] / runs["base"]["area_km2"] - 1), 0)
+    for k in ("n_0.02", "n_0.06"):
+        if abs(runs[k]["area_km2"] / runs["base"]["area_km2"] - 1) >= 0.03:
+            raise Mismatch(f"README says roughness changes area < 3 %, {k} does not")
+    V["m_overshoot"] = f(max(0.0, max(r["max_water_level"] for r in runs.values()) - mo["wl"]), 2)
     V["m_mass"] = f"{max(r['mass_error_rel'] for r in runs.values()):.0e}"
     rmse, hmx = hunter_rmse()
     V["hunter_rmse"] = f(rmse * 100, 1)

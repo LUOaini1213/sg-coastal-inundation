@@ -1604,15 +1604,15 @@
   }
  },
  "model_box": [
-  103.9814,
-  1.3758,
-  104.0314,
-  1.4258
+  103.7442,
+  1.2547,
+  103.7942,
+  1.3047
  ],
  "model": {
-  "bathtub_area_km2": 3.268,
-  "base_vs_bathtub_ratio": 0.96,
-  "steady_vs_bathtub_ratio": 1.009,
-  "base_area_km2": 3.1383
+  "bathtub_area_km2": 1.572,
+  "base_vs_bathtub_ratio": 0.984,
+  "steady_vs_bathtub_ratio": 1.0,
+  "base_area_km2": 1.5471
  }
 }

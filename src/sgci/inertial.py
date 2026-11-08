@@ -32,13 +32,16 @@ class Result:
 
 def run(z: np.ndarray, dx: float, n_manning, boundary: np.ndarray, stage, t_end: float,
         alpha: float = 0.7, h0: np.ndarray | None = None, h_dry: float = 1e-3,
-        dt_max: float = 10.0, closed: bool = True) -> Result:
+        dt_max: float = 10.0, closed: bool = True, theta: float = 0.7) -> Result:
     """Integrate the local-inertial equations.
 
     z        : bed elevation (m), 2-D
     boundary : bool mask of cells whose water level is prescribed: eta = stage(t)
     stage    : callable t[s] -> water level (m), or None for no boundary forcing
     closed   : outer edge of the grid is a wall (no flux)
+    theta    : de Almeida et al. (2012) weighting; theta < 1 blends each face discharge with its
+               two neighbours along the flow direction, which damps the checkerboard oscillations
+               the original scheme develops at low friction and on steep, rough (DSM) beds
     """
     z = np.asarray(z, dtype=float)
     ny, nx = z.shape
@@ -70,12 +73,14 @@ def run(z: np.ndarray, dx: float, n_manning, boundary: np.ndarray, stage, t_end:
         wet = hf > h_dry
         s = (eta[:, 1:] - eta[:, :-1]) / dx
         hf_s = np.where(wet, hf, 1.0)
+        qx = _blend(qx, theta, axis=1)
         qx = np.where(wet, (qx - G * hf_s * dt * s) / (1.0 + G * dt * n2x * np.abs(qx) / hf_s ** (7.0 / 3.0)), 0.0)
         # y faces
         hf = np.maximum(eta[1:, :], eta[:-1, :]) - zy
         wet = hf > h_dry
         s = (eta[1:, :] - eta[:-1, :]) / dx
         hf_s = np.where(wet, hf, 1.0)
+        qy = _blend(qy, theta, axis=0)
         qy = np.where(wet, (qy - G * hf_s * dt * s) / (1.0 + G * dt * n2y * np.abs(qy) / hf_s ** (7.0 / 3.0)), 0.0)
         # limit outflow so that no cell is drained below zero depth in one step
         out = np.zeros_like(h)
@@ -101,6 +106,18 @@ def run(z: np.ndarray, dx: float, n_manning, boundary: np.ndarray, stage, t_end:
         steps += 1
     v1 = float(h[interior].sum() * dx * dx)
     return Result(h=h, hmax=hmax, t_end=t, steps=steps, volume_in=vin, volume_error=v1 - v0 - vin)
+
+
+def _blend(q: np.ndarray, theta: float, axis: int) -> np.ndarray:
+    """theta*q_i + (1-theta)/2*(q_{i-1} + q_{i+1}) along ``axis`` (end faces unchanged)."""
+    if theta >= 1.0 or q.shape[axis] < 3:
+        return q
+    out = q.copy()
+    if axis == 1:
+        out[:, 1:-1] = theta * q[:, 1:-1] + 0.5 * (1.0 - theta) * (q[:, :-2] + q[:, 2:])
+    else:
+        out[1:-1, :] = theta * q[1:-1, :] + 0.5 * (1.0 - theta) * (q[:-2, :] + q[2:, :])
+    return out
 
 
 def coarsen(z: np.ndarray, k: int, how: str = "mean") -> np.ndarray:
