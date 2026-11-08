@@ -203,6 +203,7 @@ function initMap() {
   document.getElementById('map').appendChild(lg);
   document.getElementById('modeltoggle').addEventListener('change', e => {
     const on = e.target.checked;
+    if (!mapReady) { e.target.checked = false; return; }
     map.setLayoutProperty('model', 'visibility', on ? 'visible' : 'none');
     map.setLayoutProperty('flood', 'visibility', on ? 'none' : 'visible');
     lg.innerHTML = on ? '<span class="sw" style="background:#1c5cab"></span>Flooded in 2-D model &nbsp;<span class="sw" style="background:#eb6834"></span>Bathtub only'
