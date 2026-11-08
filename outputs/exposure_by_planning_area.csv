@@ -1,0 +1,771 @@
+id,planning_area,area_km2,buildings,population
+rp10_2020,Bedok,0.03,19,920
+rp10_2020,Boon Lay,0.09,23,0
+rp10_2020,Bukit Batok,0.0,0,0
+rp10_2020,Bukit Merah,0.228,31,220
+rp10_2020,Bukit Panjang,0.0,0,0
+rp10_2020,Bukit Timah,0.0,0,0
+rp10_2020,Central Water Catchment,0.0,0,0
+rp10_2020,Changi,0.091,13,20
+rp10_2020,Choa Chu Kang,0.0,0,0
+rp10_2020,Clementi,0.001,4,0
+rp10_2020,Hougang,0.0,0,0
+rp10_2020,Jurong East,0.22,96,0
+rp10_2020,Jurong West,0.0,0,0
+rp10_2020,Pasir Ris,0.03,15,170
+rp10_2020,Pioneer,0.077,21,0
+rp10_2020,Punggol,0.02,17,180
+rp10_2020,Queenstown,1.131,35,20
+rp10_2020,Seletar,0.073,21,0
+rp10_2020,Sembawang,0.021,8,0
+rp10_2020,Sengkang,0.0,0,0
+rp10_2020,Serangoon,0.0,0,0
+rp10_2020,Kallang,0.0,0,0
+rp10_2020,Lim Chu Kang,0.009,0,0
+rp10_2020,North-Eastern Islands,3.103,24,0
+rp10_2020,Novena,0.0,0,0
+rp10_2020,Simpang,0.024,0,0
+rp10_2020,Southern Islands,0.134,192,290
+rp10_2020,Sungei Kadut,0.002,0,0
+rp10_2020,Toa Payoh,0.0,0,0
+rp10_2020,Tuas,0.34,100,0
+rp10_2020,Western Islands,0.709,151,0
+rp10_2020,Western Water Catchment,0.12,0,0
+rp10_2020,Woodlands,0.005,2,190
+rp10_2020,River Valley,0.0,0,0
+rp10_2020,Rochor,0.0,0,0
+rp10_2020,Singapore River,0.0,0,0
+rp10_2020,Straits View,0.013,4,0
+rp10_2020,Changi Bay,0.064,3,0
+rp10_2020,Marine Parade,0.054,10,0
+rp10_2020,Downtown Core,0.0,0,0
+rp10_2020,Marina East,0.045,2,0
+rp10_2020,Marina South,0.01,4,0
+rp10_2020,Museum,0.0,0,0
+rp10_2020,Newton,0.0,0,0
+rp10_2020,Orchard,0.0,0,0
+rp10_2020,Outram,0.0,0,0
+rp10_2020,Tampines,0.006,3,10
+rp10_2020,Tanglin,0.0,0,0
+rp10_2020,Tengah,0.0,0,0
+rp10_2020,Mandai,0.0,0,0
+rp10_2020,Bishan,0.0,0,0
+rp10_2020,Ang Mo Kio,0.0,0,0
+rp10_2020,Geylang,0.0,0,0
+rp10_2020,Paya Lebar,0.0,0,0
+rp10_2020,Yishun,0.004,0,0
+rp10_ssp126_2050,Bedok,0.032,26,1270
+rp10_ssp126_2050,Boon Lay,0.094,23,0
+rp10_ssp126_2050,Bukit Batok,0.0,0,0
+rp10_ssp126_2050,Bukit Merah,0.237,32,230
+rp10_ssp126_2050,Bukit Panjang,0.0,0,0
+rp10_ssp126_2050,Bukit Timah,0.0,0,0
+rp10_ssp126_2050,Central Water Catchment,0.0,0,0
+rp10_ssp126_2050,Changi,0.188,18,20
+rp10_ssp126_2050,Choa Chu Kang,0.0,0,0
+rp10_ssp126_2050,Clementi,0.001,4,0
+rp10_ssp126_2050,Hougang,0.0,0,0
+rp10_ssp126_2050,Jurong East,0.241,107,0
+rp10_ssp126_2050,Jurong West,0.0,0,0
+rp10_ssp126_2050,Pasir Ris,0.035,15,170
+rp10_ssp126_2050,Pioneer,0.086,22,0
+rp10_ssp126_2050,Punggol,0.022,17,180
+rp10_ssp126_2050,Queenstown,1.186,35,20
+rp10_ssp126_2050,Seletar,0.08,21,0
+rp10_ssp126_2050,Sembawang,0.024,11,0
+rp10_ssp126_2050,Sengkang,0.0,0,0
+rp10_ssp126_2050,Serangoon,0.0,0,0
+rp10_ssp126_2050,Kallang,0.0,0,0
+rp10_ssp126_2050,Lim Chu Kang,0.01,1,0
+rp10_ssp126_2050,North-Eastern Islands,3.217,24,0
+rp10_ssp126_2050,Novena,0.0,0,0
+rp10_ssp126_2050,Simpang,0.025,0,0
+rp10_ssp126_2050,Southern Islands,0.142,216,330
+rp10_ssp126_2050,Sungei Kadut,0.002,0,0
+rp10_ssp126_2050,Toa Payoh,0.0,0,0
+rp10_ssp126_2050,Tuas,0.383,106,0
+rp10_ssp126_2050,Western Islands,1.217,161,0
+rp10_ssp126_2050,Western Water Catchment,0.132,0,0
+rp10_ssp126_2050,Woodlands,0.005,2,190
+rp10_ssp126_2050,River Valley,0.0,0,0
+rp10_ssp126_2050,Rochor,0.0,0,0
+rp10_ssp126_2050,Singapore River,0.0,0,0
+rp10_ssp126_2050,Straits View,0.013,4,0
+rp10_ssp126_2050,Changi Bay,0.071,6,0
+rp10_ssp126_2050,Marine Parade,0.057,10,0
+rp10_ssp126_2050,Downtown Core,0.0,0,0
+rp10_ssp126_2050,Marina East,0.051,2,0
+rp10_ssp126_2050,Marina South,0.01,4,0
+rp10_ssp126_2050,Museum,0.0,0,0
+rp10_ssp126_2050,Newton,0.0,0,0
+rp10_ssp126_2050,Orchard,0.0,0,0
+rp10_ssp126_2050,Outram,0.0,0,0
+rp10_ssp126_2050,Tampines,0.007,3,10
+rp10_ssp126_2050,Tanglin,0.0,0,0
+rp10_ssp126_2050,Tengah,0.0,0,0
+rp10_ssp126_2050,Mandai,0.0,0,0
+rp10_ssp126_2050,Bishan,0.0,0,0
+rp10_ssp126_2050,Ang Mo Kio,0.0,0,0
+rp10_ssp126_2050,Geylang,0.0,0,0
+rp10_ssp126_2050,Paya Lebar,0.0,0,0
+rp10_ssp126_2050,Yishun,0.004,0,0
+rp10_ssp245_2050,Bedok,0.032,26,1270
+rp10_ssp245_2050,Boon Lay,0.096,23,0
+rp10_ssp245_2050,Bukit Batok,0.0,0,0
+rp10_ssp245_2050,Bukit Merah,0.237,32,230
+rp10_ssp245_2050,Bukit Panjang,0.0,0,0
+rp10_ssp245_2050,Bukit Timah,0.0,0,0
+rp10_ssp245_2050,Central Water Catchment,0.0,0,0
+rp10_ssp245_2050,Changi,0.193,18,20
+rp10_ssp245_2050,Choa Chu Kang,0.0,0,0
+rp10_ssp245_2050,Clementi,0.001,4,0
+rp10_ssp245_2050,Hougang,0.0,0,0
+rp10_ssp245_2050,Jurong East,0.243,107,0
+rp10_ssp245_2050,Jurong West,0.0,0,0
+rp10_ssp245_2050,Pasir Ris,0.037,17,170
+rp10_ssp245_2050,Pioneer,0.089,24,0
+rp10_ssp245_2050,Punggol,0.022,17,180
+rp10_ssp245_2050,Queenstown,1.191,35,20
+rp10_ssp245_2050,Seletar,0.084,21,0
+rp10_ssp245_2050,Sembawang,0.024,11,0
+rp10_ssp245_2050,Sengkang,0.0,0,0
+rp10_ssp245_2050,Serangoon,0.0,0,0
+rp10_ssp245_2050,Kallang,0.0,0,0
+rp10_ssp245_2050,Lim Chu Kang,0.01,1,0
+rp10_ssp245_2050,North-Eastern Islands,3.223,24,0
+rp10_ssp245_2050,Novena,0.0,0,0
+rp10_ssp245_2050,Simpang,0.026,0,0
+rp10_ssp245_2050,Southern Islands,0.271,234,360
+rp10_ssp245_2050,Sungei Kadut,0.002,0,0
+rp10_ssp245_2050,Toa Payoh,0.0,0,0
+rp10_ssp245_2050,Tuas,0.392,107,0
+rp10_ssp245_2050,Western Islands,1.225,161,0
+rp10_ssp245_2050,Western Water Catchment,0.134,0,0
+rp10_ssp245_2050,Woodlands,0.005,2,190
+rp10_ssp245_2050,River Valley,0.0,0,0
+rp10_ssp245_2050,Rochor,0.0,0,0
+rp10_ssp245_2050,Singapore River,0.0,0,0
+rp10_ssp245_2050,Straits View,0.013,4,0
+rp10_ssp245_2050,Changi Bay,0.071,6,0
+rp10_ssp245_2050,Marine Parade,0.057,10,0
+rp10_ssp245_2050,Downtown Core,0.0,0,0
+rp10_ssp245_2050,Marina East,0.051,2,0
+rp10_ssp245_2050,Marina South,0.01,4,0
+rp10_ssp245_2050,Museum,0.0,0,0
+rp10_ssp245_2050,Newton,0.0,0,0
+rp10_ssp245_2050,Orchard,0.0,0,0
+rp10_ssp245_2050,Outram,0.0,0,0
+rp10_ssp245_2050,Tampines,0.007,3,10
+rp10_ssp245_2050,Tanglin,0.0,0,0
+rp10_ssp245_2050,Tengah,0.0,0,0
+rp10_ssp245_2050,Mandai,0.0,0,0
+rp10_ssp245_2050,Bishan,0.0,0,0
+rp10_ssp245_2050,Ang Mo Kio,0.0,0,0
+rp10_ssp245_2050,Geylang,0.0,0,0
+rp10_ssp245_2050,Paya Lebar,0.0,0,0
+rp10_ssp245_2050,Yishun,0.004,0,0
+rp10_ssp585_2050,Bedok,0.033,26,1270
+rp10_ssp585_2050,Boon Lay,0.101,25,0
+rp10_ssp585_2050,Bukit Batok,0.0,0,0
+rp10_ssp585_2050,Bukit Merah,0.243,33,250
+rp10_ssp585_2050,Bukit Panjang,0.0,0,0
+rp10_ssp585_2050,Bukit Timah,0.0,0,0
+rp10_ssp585_2050,Central Water Catchment,0.0,0,0
+rp10_ssp585_2050,Changi,0.204,18,20
+rp10_ssp585_2050,Choa Chu Kang,0.0,0,0
+rp10_ssp585_2050,Clementi,0.002,6,0
+rp10_ssp585_2050,Hougang,0.0,0,0
+rp10_ssp585_2050,Jurong East,0.246,107,0
+rp10_ssp585_2050,Jurong West,0.0,0,0
+rp10_ssp585_2050,Pasir Ris,0.038,17,170
+rp10_ssp585_2050,Pioneer,0.09,24,0
+rp10_ssp585_2050,Punggol,0.023,17,180
+rp10_ssp585_2050,Queenstown,1.207,35,20
+rp10_ssp585_2050,Seletar,0.085,21,0
+rp10_ssp585_2050,Sembawang,0.024,11,0
+rp10_ssp585_2050,Sengkang,0.0,0,0
+rp10_ssp585_2050,Serangoon,0.0,0,0
+rp10_ssp585_2050,Kallang,0.0,0,0
+rp10_ssp585_2050,Lim Chu Kang,0.01,1,0
+rp10_ssp585_2050,North-Eastern Islands,3.236,42,0
+rp10_ssp585_2050,Novena,0.0,0,0
+rp10_ssp585_2050,Simpang,0.026,0,0
+rp10_ssp585_2050,Southern Islands,0.274,234,360
+rp10_ssp585_2050,Sungei Kadut,0.002,0,0
+rp10_ssp585_2050,Toa Payoh,0.0,0,0
+rp10_ssp585_2050,Tuas,0.4,108,0
+rp10_ssp585_2050,Western Islands,1.251,166,0
+rp10_ssp585_2050,Western Water Catchment,0.137,0,0
+rp10_ssp585_2050,Woodlands,0.005,2,190
+rp10_ssp585_2050,River Valley,0.0,0,0
+rp10_ssp585_2050,Rochor,0.0,0,0
+rp10_ssp585_2050,Singapore River,0.0,0,0
+rp10_ssp585_2050,Straits View,0.013,4,0
+rp10_ssp585_2050,Changi Bay,0.074,10,0
+rp10_ssp585_2050,Marine Parade,0.059,10,0
+rp10_ssp585_2050,Downtown Core,0.0,0,0
+rp10_ssp585_2050,Marina East,0.051,2,0
+rp10_ssp585_2050,Marina South,0.01,4,0
+rp10_ssp585_2050,Museum,0.0,0,0
+rp10_ssp585_2050,Newton,0.0,0,0
+rp10_ssp585_2050,Orchard,0.0,0,0
+rp10_ssp585_2050,Outram,0.0,0,0
+rp10_ssp585_2050,Tampines,0.007,3,10
+rp10_ssp585_2050,Tanglin,0.0,0,0
+rp10_ssp585_2050,Tengah,0.0,0,0
+rp10_ssp585_2050,Mandai,0.0,0,0
+rp10_ssp585_2050,Bishan,0.0,0,0
+rp10_ssp585_2050,Ang Mo Kio,0.0,0,0
+rp10_ssp585_2050,Geylang,0.0,0,0
+rp10_ssp585_2050,Paya Lebar,0.0,0,0
+rp10_ssp585_2050,Yishun,0.004,0,0
+rp10_ssp126_2100,Bedok,0.039,28,1320
+rp10_ssp126_2100,Boon Lay,0.117,29,0
+rp10_ssp126_2100,Bukit Batok,0.0,0,0
+rp10_ssp126_2100,Bukit Merah,0.268,40,350
+rp10_ssp126_2100,Bukit Panjang,0.0,0,0
+rp10_ssp126_2100,Bukit Timah,0.0,0,0
+rp10_ssp126_2100,Central Water Catchment,0.0,0,0
+rp10_ssp126_2100,Changi,0.277,21,20
+rp10_ssp126_2100,Choa Chu Kang,0.0,0,0
+rp10_ssp126_2100,Clementi,0.002,6,0
+rp10_ssp126_2100,Hougang,0.0,0,0
+rp10_ssp126_2100,Jurong East,0.268,113,0
+rp10_ssp126_2100,Jurong West,0.0,0,0
+rp10_ssp126_2100,Pasir Ris,0.046,19,220
+rp10_ssp126_2100,Pioneer,0.096,27,0
+rp10_ssp126_2100,Punggol,0.027,17,180
+rp10_ssp126_2100,Queenstown,1.31,49,20
+rp10_ssp126_2100,Seletar,0.104,23,0
+rp10_ssp126_2100,Sembawang,0.037,13,0
+rp10_ssp126_2100,Sengkang,0.0,0,0
+rp10_ssp126_2100,Serangoon,0.0,0,0
+rp10_ssp126_2100,Kallang,0.0,0,0
+rp10_ssp126_2100,Lim Chu Kang,0.011,1,0
+rp10_ssp126_2100,North-Eastern Islands,3.383,49,10
+rp10_ssp126_2100,Novena,0.0,0,0
+rp10_ssp126_2100,Simpang,0.031,0,0
+rp10_ssp126_2100,Southern Islands,0.306,271,410
+rp10_ssp126_2100,Sungei Kadut,0.003,0,0
+rp10_ssp126_2100,Toa Payoh,0.0,0,0
+rp10_ssp126_2100,Tuas,0.476,116,0
+rp10_ssp126_2100,Western Islands,1.506,223,0
+rp10_ssp126_2100,Western Water Catchment,0.169,0,0
+rp10_ssp126_2100,Woodlands,0.005,2,190
+rp10_ssp126_2100,River Valley,0.0,0,0
+rp10_ssp126_2100,Rochor,0.0,0,0
+rp10_ssp126_2100,Singapore River,0.0,0,0
+rp10_ssp126_2100,Straits View,0.014,4,0
+rp10_ssp126_2100,Changi Bay,0.09,12,0
+rp10_ssp126_2100,Marine Parade,0.064,11,0
+rp10_ssp126_2100,Downtown Core,0.0,0,0
+rp10_ssp126_2100,Marina East,0.08,2,0
+rp10_ssp126_2100,Marina South,0.02,4,0
+rp10_ssp126_2100,Museum,0.0,0,0
+rp10_ssp126_2100,Newton,0.0,0,0
+rp10_ssp126_2100,Orchard,0.0,0,0
+rp10_ssp126_2100,Outram,0.0,0,0
+rp10_ssp126_2100,Tampines,0.01,14,60
+rp10_ssp126_2100,Tanglin,0.0,0,0
+rp10_ssp126_2100,Tengah,0.0,0,0
+rp10_ssp126_2100,Mandai,0.0,0,0
+rp10_ssp126_2100,Bishan,0.0,0,0
+rp10_ssp126_2100,Ang Mo Kio,0.0,0,0
+rp10_ssp126_2100,Geylang,0.0,0,0
+rp10_ssp126_2100,Paya Lebar,0.0,0,0
+rp10_ssp126_2100,Yishun,0.004,0,0
+rp10_ssp245_2100,Bedok,0.039,28,1320
+rp10_ssp245_2100,Boon Lay,0.126,30,0
+rp10_ssp245_2100,Bukit Batok,0.0,0,0
+rp10_ssp245_2100,Bukit Merah,0.282,41,360
+rp10_ssp245_2100,Bukit Panjang,0.0,0,0
+rp10_ssp245_2100,Bukit Timah,0.0,0,0
+rp10_ssp245_2100,Central Water Catchment,0.0,0,0
+rp10_ssp245_2100,Changi,0.66,30,20
+rp10_ssp245_2100,Choa Chu Kang,0.0,0,0
+rp10_ssp245_2100,Clementi,0.002,6,0
+rp10_ssp245_2100,Hougang,0.0,0,0
+rp10_ssp245_2100,Jurong East,0.289,126,0
+rp10_ssp245_2100,Jurong West,0.0,0,0
+rp10_ssp245_2100,Pasir Ris,0.052,21,260
+rp10_ssp245_2100,Pioneer,0.104,28,0
+rp10_ssp245_2100,Punggol,0.028,17,180
+rp10_ssp245_2100,Queenstown,1.368,53,30
+rp10_ssp245_2100,Seletar,0.117,23,0
+rp10_ssp245_2100,Sembawang,0.043,16,0
+rp10_ssp245_2100,Sengkang,0.0,0,0
+rp10_ssp245_2100,Serangoon,0.0,0,0
+rp10_ssp245_2100,Kallang,0.0,0,0
+rp10_ssp245_2100,Lim Chu Kang,0.013,1,0
+rp10_ssp245_2100,North-Eastern Islands,3.448,51,10
+rp10_ssp245_2100,Novena,0.0,0,0
+rp10_ssp245_2100,Simpang,0.031,0,0
+rp10_ssp245_2100,Southern Islands,0.321,291,450
+rp10_ssp245_2100,Sungei Kadut,0.003,0,0
+rp10_ssp245_2100,Toa Payoh,0.0,0,0
+rp10_ssp245_2100,Tuas,0.528,120,0
+rp10_ssp245_2100,Western Islands,1.66,249,0
+rp10_ssp245_2100,Western Water Catchment,0.181,0,0
+rp10_ssp245_2100,Woodlands,0.006,2,190
+rp10_ssp245_2100,River Valley,0.0,0,0
+rp10_ssp245_2100,Rochor,0.0,0,0
+rp10_ssp245_2100,Singapore River,0.0,0,0
+rp10_ssp245_2100,Straits View,0.014,4,0
+rp10_ssp245_2100,Changi Bay,0.095,13,0
+rp10_ssp245_2100,Marine Parade,0.08,11,0
+rp10_ssp245_2100,Downtown Core,0.0,0,0
+rp10_ssp245_2100,Marina East,0.087,2,0
+rp10_ssp245_2100,Marina South,0.028,6,0
+rp10_ssp245_2100,Museum,0.0,0,0
+rp10_ssp245_2100,Newton,0.0,0,0
+rp10_ssp245_2100,Orchard,0.0,0,0
+rp10_ssp245_2100,Outram,0.0,0,0
+rp10_ssp245_2100,Tampines,0.011,14,60
+rp10_ssp245_2100,Tanglin,0.0,0,0
+rp10_ssp245_2100,Tengah,0.0,0,0
+rp10_ssp245_2100,Mandai,0.0,0,0
+rp10_ssp245_2100,Bishan,0.0,0,0
+rp10_ssp245_2100,Ang Mo Kio,0.0,0,0
+rp10_ssp245_2100,Geylang,0.0,0,0
+rp10_ssp245_2100,Paya Lebar,0.0,0,0
+rp10_ssp245_2100,Yishun,0.006,0,0
+rp10_ssp585_2100,Bedok,0.043,28,1320
+rp10_ssp585_2100,Boon Lay,0.161,39,0
+rp10_ssp585_2100,Bukit Batok,0.0,0,0
+rp10_ssp585_2100,Bukit Merah,0.311,44,360
+rp10_ssp585_2100,Bukit Panjang,0.0,0,0
+rp10_ssp585_2100,Bukit Timah,0.0,0,0
+rp10_ssp585_2100,Central Water Catchment,0.0,0,0
+rp10_ssp585_2100,Changi,1.203,47,60
+rp10_ssp585_2100,Choa Chu Kang,0.0,0,0
+rp10_ssp585_2100,Clementi,0.002,6,0
+rp10_ssp585_2100,Hougang,0.0,0,0
+rp10_ssp585_2100,Jurong East,0.337,135,0
+rp10_ssp585_2100,Jurong West,0.0,0,0
+rp10_ssp585_2100,Pasir Ris,0.059,22,290
+rp10_ssp585_2100,Pioneer,0.13,31,0
+rp10_ssp585_2100,Punggol,0.035,20,180
+rp10_ssp585_2100,Queenstown,1.555,58,50
+rp10_ssp585_2100,Seletar,0.136,27,0
+rp10_ssp585_2100,Sembawang,0.058,30,0
+rp10_ssp585_2100,Sengkang,0.0,0,0
+rp10_ssp585_2100,Serangoon,0.0,0,0
+rp10_ssp585_2100,Kallang,0.0,0,0
+rp10_ssp585_2100,Lim Chu Kang,0.016,2,0
+rp10_ssp585_2100,North-Eastern Islands,3.63,71,10
+rp10_ssp585_2100,Novena,0.0,0,0
+rp10_ssp585_2100,Simpang,0.034,0,0
+rp10_ssp585_2100,Southern Islands,0.345,308,480
+rp10_ssp585_2100,Sungei Kadut,0.008,0,0
+rp10_ssp585_2100,Toa Payoh,0.0,0,0
+rp10_ssp585_2100,Tuas,0.651,143,0
+rp10_ssp585_2100,Western Islands,2.309,303,0
+rp10_ssp585_2100,Western Water Catchment,0.195,0,0
+rp10_ssp585_2100,Woodlands,0.008,3,280
+rp10_ssp585_2100,River Valley,0.0,0,0
+rp10_ssp585_2100,Rochor,0.0,0,0
+rp10_ssp585_2100,Singapore River,0.0,0,0
+rp10_ssp585_2100,Straits View,0.021,4,0
+rp10_ssp585_2100,Changi Bay,0.118,14,0
+rp10_ssp585_2100,Marine Parade,0.097,15,0
+rp10_ssp585_2100,Downtown Core,0.0,0,0
+rp10_ssp585_2100,Marina East,0.093,2,0
+rp10_ssp585_2100,Marina South,0.053,8,0
+rp10_ssp585_2100,Museum,0.0,0,0
+rp10_ssp585_2100,Newton,0.0,0,0
+rp10_ssp585_2100,Orchard,0.0,0,0
+rp10_ssp585_2100,Outram,0.0,0,0
+rp10_ssp585_2100,Tampines,0.018,16,60
+rp10_ssp585_2100,Tanglin,0.0,0,0
+rp10_ssp585_2100,Tengah,0.0,0,0
+rp10_ssp585_2100,Mandai,0.0,0,0
+rp10_ssp585_2100,Bishan,0.0,0,0
+rp10_ssp585_2100,Ang Mo Kio,0.0,0,0
+rp10_ssp585_2100,Geylang,0.0,0,0
+rp10_ssp585_2100,Paya Lebar,0.0,0,0
+rp10_ssp585_2100,Yishun,0.011,1,40
+rp100_2020,Bedok,0.033,26,1270
+rp100_2020,Boon Lay,0.101,25,0
+rp100_2020,Bukit Batok,0.0,0,0
+rp100_2020,Bukit Merah,0.243,33,250
+rp100_2020,Bukit Panjang,0.0,0,0
+rp100_2020,Bukit Timah,0.0,0,0
+rp100_2020,Central Water Catchment,0.0,0,0
+rp100_2020,Changi,0.204,18,20
+rp100_2020,Choa Chu Kang,0.0,0,0
+rp100_2020,Clementi,0.002,6,0
+rp100_2020,Hougang,0.0,0,0
+rp100_2020,Jurong East,0.246,107,0
+rp100_2020,Jurong West,0.0,0,0
+rp100_2020,Pasir Ris,0.038,17,170
+rp100_2020,Pioneer,0.09,24,0
+rp100_2020,Punggol,0.023,17,180
+rp100_2020,Queenstown,1.208,35,20
+rp100_2020,Seletar,0.085,21,0
+rp100_2020,Sembawang,0.027,11,0
+rp100_2020,Sengkang,0.0,0,0
+rp100_2020,Serangoon,0.0,0,0
+rp100_2020,Kallang,0.0,0,0
+rp100_2020,Lim Chu Kang,0.01,1,0
+rp100_2020,North-Eastern Islands,3.24,42,0
+rp100_2020,Novena,0.0,0,0
+rp100_2020,Simpang,0.026,0,0
+rp100_2020,Southern Islands,0.274,234,360
+rp100_2020,Sungei Kadut,0.002,0,0
+rp100_2020,Toa Payoh,0.0,0,0
+rp100_2020,Tuas,0.402,108,0
+rp100_2020,Western Islands,1.255,166,0
+rp100_2020,Western Water Catchment,0.137,0,0
+rp100_2020,Woodlands,0.005,2,190
+rp100_2020,River Valley,0.0,0,0
+rp100_2020,Rochor,0.0,0,0
+rp100_2020,Singapore River,0.0,0,0
+rp100_2020,Straits View,0.013,4,0
+rp100_2020,Changi Bay,0.074,10,0
+rp100_2020,Marine Parade,0.059,10,0
+rp100_2020,Downtown Core,0.0,0,0
+rp100_2020,Marina East,0.051,2,0
+rp100_2020,Marina South,0.01,4,0
+rp100_2020,Museum,0.0,0,0
+rp100_2020,Newton,0.0,0,0
+rp100_2020,Orchard,0.0,0,0
+rp100_2020,Outram,0.0,0,0
+rp100_2020,Tampines,0.008,10,40
+rp100_2020,Tanglin,0.0,0,0
+rp100_2020,Tengah,0.0,0,0
+rp100_2020,Mandai,0.0,0,0
+rp100_2020,Bishan,0.0,0,0
+rp100_2020,Ang Mo Kio,0.0,0,0
+rp100_2020,Geylang,0.0,0,0
+rp100_2020,Paya Lebar,0.0,0,0
+rp100_2020,Yishun,0.004,0,0
+rp100_ssp126_2050,Bedok,0.036,28,1320
+rp100_ssp126_2050,Boon Lay,0.112,28,0
+rp100_ssp126_2050,Bukit Batok,0.0,0,0
+rp100_ssp126_2050,Bukit Merah,0.261,40,350
+rp100_ssp126_2050,Bukit Panjang,0.0,0,0
+rp100_ssp126_2050,Bukit Timah,0.0,0,0
+rp100_ssp126_2050,Central Water Catchment,0.0,0,0
+rp100_ssp126_2050,Changi,0.253,20,20
+rp100_ssp126_2050,Choa Chu Kang,0.0,0,0
+rp100_ssp126_2050,Clementi,0.002,6,0
+rp100_ssp126_2050,Hougang,0.0,0,0
+rp100_ssp126_2050,Jurong East,0.259,113,0
+rp100_ssp126_2050,Jurong West,0.0,0,0
+rp100_ssp126_2050,Pasir Ris,0.043,17,170
+rp100_ssp126_2050,Pioneer,0.093,26,0
+rp100_ssp126_2050,Punggol,0.025,17,180
+rp100_ssp126_2050,Queenstown,1.262,38,20
+rp100_ssp126_2050,Seletar,0.099,21,0
+rp100_ssp126_2050,Sembawang,0.033,12,0
+rp100_ssp126_2050,Sengkang,0.0,0,0
+rp100_ssp126_2050,Serangoon,0.0,0,0
+rp100_ssp126_2050,Kallang,0.0,0,0
+rp100_ssp126_2050,Lim Chu Kang,0.01,1,0
+rp100_ssp126_2050,North-Eastern Islands,3.34,42,0
+rp100_ssp126_2050,Novena,0.0,0,0
+rp100_ssp126_2050,Simpang,0.029,0,0
+rp100_ssp126_2050,Southern Islands,0.292,258,400
+rp100_ssp126_2050,Sungei Kadut,0.003,0,0
+rp100_ssp126_2050,Toa Payoh,0.0,0,0
+rp100_ssp126_2050,Tuas,0.439,113,0
+rp100_ssp126_2050,Western Islands,1.426,206,0
+rp100_ssp126_2050,Western Water Catchment,0.155,0,0
+rp100_ssp126_2050,Woodlands,0.005,2,190
+rp100_ssp126_2050,River Valley,0.0,0,0
+rp100_ssp126_2050,Rochor,0.0,0,0
+rp100_ssp126_2050,Singapore River,0.0,0,0
+rp100_ssp126_2050,Straits View,0.014,4,0
+rp100_ssp126_2050,Changi Bay,0.085,12,0
+rp100_ssp126_2050,Marine Parade,0.063,10,0
+rp100_ssp126_2050,Downtown Core,0.0,0,0
+rp100_ssp126_2050,Marina East,0.055,2,0
+rp100_ssp126_2050,Marina South,0.017,4,0
+rp100_ssp126_2050,Museum,0.0,0,0
+rp100_ssp126_2050,Newton,0.0,0,0
+rp100_ssp126_2050,Orchard,0.0,0,0
+rp100_ssp126_2050,Outram,0.0,0,0
+rp100_ssp126_2050,Tampines,0.01,14,60
+rp100_ssp126_2050,Tanglin,0.0,0,0
+rp100_ssp126_2050,Tengah,0.0,0,0
+rp100_ssp126_2050,Mandai,0.0,0,0
+rp100_ssp126_2050,Bishan,0.0,0,0
+rp100_ssp126_2050,Ang Mo Kio,0.0,0,0
+rp100_ssp126_2050,Geylang,0.0,0,0
+rp100_ssp126_2050,Paya Lebar,0.0,0,0
+rp100_ssp126_2050,Yishun,0.004,0,0
+rp100_ssp245_2050,Bedok,0.036,28,1320
+rp100_ssp245_2050,Boon Lay,0.112,28,0
+rp100_ssp245_2050,Bukit Batok,0.0,0,0
+rp100_ssp245_2050,Bukit Merah,0.261,40,350
+rp100_ssp245_2050,Bukit Panjang,0.0,0,0
+rp100_ssp245_2050,Bukit Timah,0.0,0,0
+rp100_ssp245_2050,Central Water Catchment,0.0,0,0
+rp100_ssp245_2050,Changi,0.256,20,20
+rp100_ssp245_2050,Choa Chu Kang,0.0,0,0
+rp100_ssp245_2050,Clementi,0.002,6,0
+rp100_ssp245_2050,Hougang,0.0,0,0
+rp100_ssp245_2050,Jurong East,0.26,113,0
+rp100_ssp245_2050,Jurong West,0.0,0,0
+rp100_ssp245_2050,Pasir Ris,0.043,17,170
+rp100_ssp245_2050,Pioneer,0.093,26,0
+rp100_ssp245_2050,Punggol,0.025,17,180
+rp100_ssp245_2050,Queenstown,1.272,38,20
+rp100_ssp245_2050,Seletar,0.1,21,0
+rp100_ssp245_2050,Sembawang,0.034,13,0
+rp100_ssp245_2050,Sengkang,0.0,0,0
+rp100_ssp245_2050,Serangoon,0.0,0,0
+rp100_ssp245_2050,Kallang,0.0,0,0
+rp100_ssp245_2050,Lim Chu Kang,0.01,1,0
+rp100_ssp245_2050,North-Eastern Islands,3.35,42,0
+rp100_ssp245_2050,Novena,0.0,0,0
+rp100_ssp245_2050,Simpang,0.03,0,0
+rp100_ssp245_2050,Southern Islands,0.292,258,400
+rp100_ssp245_2050,Sungei Kadut,0.003,0,0
+rp100_ssp245_2050,Toa Payoh,0.0,0,0
+rp100_ssp245_2050,Tuas,0.444,113,0
+rp100_ssp245_2050,Western Islands,1.456,208,0
+rp100_ssp245_2050,Western Water Catchment,0.158,0,0
+rp100_ssp245_2050,Woodlands,0.005,2,190
+rp100_ssp245_2050,River Valley,0.0,0,0
+rp100_ssp245_2050,Rochor,0.0,0,0
+rp100_ssp245_2050,Singapore River,0.0,0,0
+rp100_ssp245_2050,Straits View,0.014,4,0
+rp100_ssp245_2050,Changi Bay,0.089,12,0
+rp100_ssp245_2050,Marine Parade,0.063,10,0
+rp100_ssp245_2050,Downtown Core,0.0,0,0
+rp100_ssp245_2050,Marina East,0.055,2,0
+rp100_ssp245_2050,Marina South,0.017,4,0
+rp100_ssp245_2050,Museum,0.0,0,0
+rp100_ssp245_2050,Newton,0.0,0,0
+rp100_ssp245_2050,Orchard,0.0,0,0
+rp100_ssp245_2050,Outram,0.0,0,0
+rp100_ssp245_2050,Tampines,0.01,14,60
+rp100_ssp245_2050,Tanglin,0.0,0,0
+rp100_ssp245_2050,Tengah,0.0,0,0
+rp100_ssp245_2050,Mandai,0.0,0,0
+rp100_ssp245_2050,Bishan,0.0,0,0
+rp100_ssp245_2050,Ang Mo Kio,0.0,0,0
+rp100_ssp245_2050,Geylang,0.0,0,0
+rp100_ssp245_2050,Paya Lebar,0.0,0,0
+rp100_ssp245_2050,Yishun,0.004,0,0
+rp100_ssp585_2050,Bedok,0.039,28,1320
+rp100_ssp585_2050,Boon Lay,0.115,29,0
+rp100_ssp585_2050,Bukit Batok,0.0,0,0
+rp100_ssp585_2050,Bukit Merah,0.265,40,350
+rp100_ssp585_2050,Bukit Panjang,0.0,0,0
+rp100_ssp585_2050,Bukit Timah,0.0,0,0
+rp100_ssp585_2050,Central Water Catchment,0.0,0,0
+rp100_ssp585_2050,Changi,0.264,20,20
+rp100_ssp585_2050,Choa Chu Kang,0.0,0,0
+rp100_ssp585_2050,Clementi,0.002,6,0
+rp100_ssp585_2050,Hougang,0.0,0,0
+rp100_ssp585_2050,Jurong East,0.266,113,0
+rp100_ssp585_2050,Jurong West,0.0,0,0
+rp100_ssp585_2050,Pasir Ris,0.045,19,220
+rp100_ssp585_2050,Pioneer,0.095,27,0
+rp100_ssp585_2050,Punggol,0.026,17,180
+rp100_ssp585_2050,Queenstown,1.289,49,20
+rp100_ssp585_2050,Seletar,0.102,21,0
+rp100_ssp585_2050,Sembawang,0.034,13,0
+rp100_ssp585_2050,Sengkang,0.0,0,0
+rp100_ssp585_2050,Serangoon,0.0,0,0
+rp100_ssp585_2050,Kallang,0.0,0,0
+rp100_ssp585_2050,Lim Chu Kang,0.01,1,0
+rp100_ssp585_2050,North-Eastern Islands,3.363,49,10
+rp100_ssp585_2050,Novena,0.0,0,0
+rp100_ssp585_2050,Simpang,0.03,0,0
+rp100_ssp585_2050,Southern Islands,0.295,258,400
+rp100_ssp585_2050,Sungei Kadut,0.003,0,0
+rp100_ssp585_2050,Toa Payoh,0.0,0,0
+rp100_ssp585_2050,Tuas,0.469,116,0
+rp100_ssp585_2050,Western Islands,1.472,215,0
+rp100_ssp585_2050,Western Water Catchment,0.159,0,0
+rp100_ssp585_2050,Woodlands,0.005,2,190
+rp100_ssp585_2050,River Valley,0.0,0,0
+rp100_ssp585_2050,Rochor,0.0,0,0
+rp100_ssp585_2050,Singapore River,0.0,0,0
+rp100_ssp585_2050,Straits View,0.014,4,0
+rp100_ssp585_2050,Changi Bay,0.089,12,0
+rp100_ssp585_2050,Marine Parade,0.063,11,0
+rp100_ssp585_2050,Downtown Core,0.0,0,0
+rp100_ssp585_2050,Marina East,0.079,2,0
+rp100_ssp585_2050,Marina South,0.017,4,0
+rp100_ssp585_2050,Museum,0.0,0,0
+rp100_ssp585_2050,Newton,0.0,0,0
+rp100_ssp585_2050,Orchard,0.0,0,0
+rp100_ssp585_2050,Outram,0.0,0,0
+rp100_ssp585_2050,Tampines,0.01,14,60
+rp100_ssp585_2050,Tanglin,0.0,0,0
+rp100_ssp585_2050,Tengah,0.0,0,0
+rp100_ssp585_2050,Mandai,0.0,0,0
+rp100_ssp585_2050,Bishan,0.0,0,0
+rp100_ssp585_2050,Ang Mo Kio,0.0,0,0
+rp100_ssp585_2050,Geylang,0.0,0,0
+rp100_ssp585_2050,Paya Lebar,0.0,0,0
+rp100_ssp585_2050,Yishun,0.004,0,0
+rp100_ssp126_2100,Bedok,0.04,28,1320
+rp100_ssp126_2100,Boon Lay,0.137,35,0
+rp100_ssp126_2100,Bukit Batok,0.0,0,0
+rp100_ssp126_2100,Bukit Merah,0.29,44,360
+rp100_ssp126_2100,Bukit Panjang,0.0,0,0
+rp100_ssp126_2100,Bukit Timah,0.0,0,0
+rp100_ssp126_2100,Central Water Catchment,0.0,0,0
+rp100_ssp126_2100,Changi,0.715,35,20
+rp100_ssp126_2100,Choa Chu Kang,0.0,0,0
+rp100_ssp126_2100,Clementi,0.002,6,0
+rp100_ssp126_2100,Hougang,0.0,0,0
+rp100_ssp126_2100,Jurong East,0.3,128,0
+rp100_ssp126_2100,Jurong West,0.0,0,0
+rp100_ssp126_2100,Pasir Ris,0.055,21,260
+rp100_ssp126_2100,Pioneer,0.114,30,0
+rp100_ssp126_2100,Punggol,0.03,18,180
+rp100_ssp126_2100,Queenstown,1.431,54,30
+rp100_ssp126_2100,Seletar,0.123,27,0
+rp100_ssp126_2100,Sembawang,0.045,17,0
+rp100_ssp126_2100,Sengkang,0.0,0,0
+rp100_ssp126_2100,Serangoon,0.0,0,0
+rp100_ssp126_2100,Kallang,0.0,0,0
+rp100_ssp126_2100,Lim Chu Kang,0.014,1,0
+rp100_ssp126_2100,North-Eastern Islands,3.535,59,10
+rp100_ssp126_2100,Novena,0.0,0,0
+rp100_ssp126_2100,Simpang,0.032,0,0
+rp100_ssp126_2100,Southern Islands,0.329,304,470
+rp100_ssp126_2100,Sungei Kadut,0.004,0,0
+rp100_ssp126_2100,Toa Payoh,0.0,0,0
+rp100_ssp126_2100,Tuas,0.561,122,0
+rp100_ssp126_2100,Western Islands,1.742,268,0
+rp100_ssp126_2100,Western Water Catchment,0.183,0,0
+rp100_ssp126_2100,Woodlands,0.008,3,280
+rp100_ssp126_2100,River Valley,0.0,0,0
+rp100_ssp126_2100,Rochor,0.0,0,0
+rp100_ssp126_2100,Singapore River,0.0,0,0
+rp100_ssp126_2100,Straits View,0.016,4,0
+rp100_ssp126_2100,Changi Bay,0.1,14,0
+rp100_ssp126_2100,Marine Parade,0.086,11,0
+rp100_ssp126_2100,Downtown Core,0.0,0,0
+rp100_ssp126_2100,Marina East,0.089,2,0
+rp100_ssp126_2100,Marina South,0.03,6,0
+rp100_ssp126_2100,Museum,0.0,0,0
+rp100_ssp126_2100,Newton,0.0,0,0
+rp100_ssp126_2100,Orchard,0.0,0,0
+rp100_ssp126_2100,Outram,0.0,0,0
+rp100_ssp126_2100,Tampines,0.012,16,60
+rp100_ssp126_2100,Tanglin,0.0,0,0
+rp100_ssp126_2100,Tengah,0.0,0,0
+rp100_ssp126_2100,Mandai,0.0,0,0
+rp100_ssp126_2100,Bishan,0.0,0,0
+rp100_ssp126_2100,Ang Mo Kio,0.0,0,0
+rp100_ssp126_2100,Geylang,0.0,0,0
+rp100_ssp126_2100,Paya Lebar,0.0,0,0
+rp100_ssp126_2100,Yishun,0.006,0,0
+rp100_ssp245_2100,Bedok,0.041,28,1320
+rp100_ssp245_2100,Boon Lay,0.148,39,0
+rp100_ssp245_2100,Bukit Batok,0.0,0,0
+rp100_ssp245_2100,Bukit Merah,0.305,44,360
+rp100_ssp245_2100,Bukit Panjang,0.0,0,0
+rp100_ssp245_2100,Bukit Timah,0.0,0,0
+rp100_ssp245_2100,Central Water Catchment,0.0,0,0
+rp100_ssp245_2100,Changi,1.16,45,50
+rp100_ssp245_2100,Choa Chu Kang,0.0,0,0
+rp100_ssp245_2100,Clementi,0.002,6,0
+rp100_ssp245_2100,Hougang,0.0,0,0
+rp100_ssp245_2100,Jurong East,0.331,132,0
+rp100_ssp245_2100,Jurong West,0.0,0,0
+rp100_ssp245_2100,Pasir Ris,0.059,22,290
+rp100_ssp245_2100,Pioneer,0.121,31,0
+rp100_ssp245_2100,Punggol,0.031,19,180
+rp100_ssp245_2100,Queenstown,1.532,57,40
+rp100_ssp245_2100,Seletar,0.133,27,0
+rp100_ssp245_2100,Sembawang,0.054,24,0
+rp100_ssp245_2100,Sengkang,0.0,0,0
+rp100_ssp245_2100,Serangoon,0.0,0,0
+rp100_ssp245_2100,Kallang,0.0,0,0
+rp100_ssp245_2100,Lim Chu Kang,0.016,2,0
+rp100_ssp245_2100,North-Eastern Islands,3.602,60,10
+rp100_ssp245_2100,Novena,0.0,0,0
+rp100_ssp245_2100,Simpang,0.033,0,0
+rp100_ssp245_2100,Southern Islands,0.344,308,480
+rp100_ssp245_2100,Sungei Kadut,0.006,0,0
+rp100_ssp245_2100,Toa Payoh,0.0,0,0
+rp100_ssp245_2100,Tuas,0.62,133,0
+rp100_ssp245_2100,Western Islands,2.199,293,0
+rp100_ssp245_2100,Western Water Catchment,0.192,0,0
+rp100_ssp245_2100,Woodlands,0.008,3,280
+rp100_ssp245_2100,River Valley,0.0,0,0
+rp100_ssp245_2100,Rochor,0.0,0,0
+rp100_ssp245_2100,Singapore River,0.0,0,0
+rp100_ssp245_2100,Straits View,0.017,4,0
+rp100_ssp245_2100,Changi Bay,0.111,14,0
+rp100_ssp245_2100,Marine Parade,0.093,15,0
+rp100_ssp245_2100,Downtown Core,0.0,0,0
+rp100_ssp245_2100,Marina East,0.093,2,0
+rp100_ssp245_2100,Marina South,0.052,8,0
+rp100_ssp245_2100,Museum,0.0,0,0
+rp100_ssp245_2100,Newton,0.0,0,0
+rp100_ssp245_2100,Orchard,0.0,0,0
+rp100_ssp245_2100,Outram,0.0,0,0
+rp100_ssp245_2100,Tampines,0.017,16,60
+rp100_ssp245_2100,Tanglin,0.0,0,0
+rp100_ssp245_2100,Tengah,0.0,0,0
+rp100_ssp245_2100,Mandai,0.0,0,0
+rp100_ssp245_2100,Bishan,0.0,0,0
+rp100_ssp245_2100,Ang Mo Kio,0.0,0,0
+rp100_ssp245_2100,Geylang,0.0,0,0
+rp100_ssp245_2100,Paya Lebar,0.0,0,0
+rp100_ssp245_2100,Yishun,0.01,1,40
+rp100_ssp585_2100,Bedok,0.049,29,1380
+rp100_ssp585_2100,Boon Lay,0.181,41,0
+rp100_ssp585_2100,Bukit Batok,0.0,0,0
+rp100_ssp585_2100,Bukit Merah,0.33,47,410
+rp100_ssp585_2100,Bukit Panjang,0.0,0,0
+rp100_ssp585_2100,Bukit Timah,0.0,0,0
+rp100_ssp585_2100,Central Water Catchment,0.0,0,0
+rp100_ssp585_2100,Changi,1.419,52,60
+rp100_ssp585_2100,Choa Chu Kang,0.0,0,0
+rp100_ssp585_2100,Clementi,0.002,6,0
+rp100_ssp585_2100,Hougang,0.0,0,0
+rp100_ssp585_2100,Jurong East,0.399,138,0
+rp100_ssp585_2100,Jurong West,0.0,0,0
+rp100_ssp585_2100,Pasir Ris,0.068,23,290
+rp100_ssp585_2100,Pioneer,0.148,32,0
+rp100_ssp585_2100,Punggol,0.041,20,180
+rp100_ssp585_2100,Queenstown,1.636,65,50
+rp100_ssp585_2100,Seletar,0.193,30,0
+rp100_ssp585_2100,Sembawang,0.087,49,30
+rp100_ssp585_2100,Sengkang,0.0,0,0
+rp100_ssp585_2100,Serangoon,0.0,0,0
+rp100_ssp585_2100,Kallang,0.0,0,0
+rp100_ssp585_2100,Lim Chu Kang,0.018,2,0
+rp100_ssp585_2100,North-Eastern Islands,3.71,75,10
+rp100_ssp585_2100,Novena,0.0,0,0
+rp100_ssp585_2100,Simpang,0.035,0,0
+rp100_ssp585_2100,Southern Islands,0.378,321,490
+rp100_ssp585_2100,Sungei Kadut,0.01,0,0
+rp100_ssp585_2100,Toa Payoh,0.0,0,0
+rp100_ssp585_2100,Tuas,0.762,157,0
+rp100_ssp585_2100,Western Islands,3.154,374,0
+rp100_ssp585_2100,Western Water Catchment,0.204,0,0
+rp100_ssp585_2100,Woodlands,0.008,3,280
+rp100_ssp585_2100,River Valley,0.0,0,0
+rp100_ssp585_2100,Rochor,0.0,0,0
+rp100_ssp585_2100,Singapore River,0.0,0,0
+rp100_ssp585_2100,Straits View,0.336,11,0
+rp100_ssp585_2100,Changi Bay,0.136,14,0
+rp100_ssp585_2100,Marine Parade,0.104,17,0
+rp100_ssp585_2100,Downtown Core,0.087,9,110
+rp100_ssp585_2100,Marina East,0.099,2,0
+rp100_ssp585_2100,Marina South,0.112,9,0
+rp100_ssp585_2100,Museum,0.0,0,0
+rp100_ssp585_2100,Newton,0.0,0,0
+rp100_ssp585_2100,Orchard,0.0,0,0
+rp100_ssp585_2100,Outram,0.0,0,0
+rp100_ssp585_2100,Tampines,0.021,18,70
+rp100_ssp585_2100,Tanglin,0.0,0,0
+rp100_ssp585_2100,Tengah,0.0,0,0
+rp100_ssp585_2100,Mandai,0.0,0,0
+rp100_ssp585_2100,Bishan,0.0,0,0
+rp100_ssp585_2100,Ang Mo Kio,0.0,0,0
+rp100_ssp585_2100,Geylang,0.0,0,0
+rp100_ssp585_2100,Paya Lebar,0.0,0,0
+rp100_ssp585_2100,Yishun,0.011,2,80

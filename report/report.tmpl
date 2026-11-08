@@ -1,0 +1,148 @@
+---
+title: "Coastal flood exposure of Singapore under extreme sea levels and AR6 sea-level rise"
+subtitle: "A screening study with open data — technical report"
+author: "Wenjie Luo (independent personal project; not affiliated with NUS, TMSI or PUB)"
+date: "November 2026"
+---
+
+# Summary
+
+This report estimates which parts of Singapore would be below, and hydraulically connected
+to, extreme still-water sea levels today and under IPCC AR6 sea-level rise, and what lies
+there. It is a screening exercise built entirely on open data; it is **not an official flood
+map**. Coastal defences, drainage, waves and rainfall are not represented.
+
+* The 100-year still-water level at Tanjong Pagar is {{rl100}} m above the 1995–2014 mean sea level
+  (95 % CI {{rl100_lo}}–{{rl100_hi}} m), from a GEV fit to {{n_seasons}} detrended monsoon-season maxima.
+* Adding AR6 medium-confidence projections gives 100-year levels of {{wl_100_2020}} m (2020) to
+  {{wl_100_ssp585_2100}} m (SSP5-8.5, 2100).
+* Connected flooding grows from {{area_100_2020}} km² to {{area_100_ssp585_2100}} km² (AR6 likely range
+  {{area_100_ssp585_2100_lo}}–{{area_100_ssp585_2100_hi}} km²) across those cases; {{island_share}} of the 2100 SSP5-8.5 area is on
+  offshore islands. Exposure is small: {{bldg_100_ssp585_2100}} buildings within ~60 m of
+  flooding and a building-weighted proxy of {{pop_100_ssp585_2100}} residents.
+* The dominant uncertainty is vertical: a ±0.3 m change in the geoid-to-MSL offset moves the
+  2100 SSP5-8.5 area between {{dlo_100_ssp585_2100}} and {{dhi_100_ssp585_2100}} km²; ignoring the offset gives
+  {{d0_100_ssp585_2100}} km². Hydraulic connectivity also matters: the naive bathtub gives {{naive_100_ssp585_2100}} km².
+* A 2-D local-inertial model of one mainland sub-domain, verified against an analytical
+  solution (RMSE {{hunter_rmse}} cm), floods {{m_ratio}} of the bathtub area under a realistic 72-hour
+  storm-tide hydrograph, and {{m_steady_ratio}} when the peak is held constant.
+
+# 1. Data
+
+| Input | Source | Notes |
+|---|---|---|
+| Hourly sea level | UHSLC station 699, Tanjong Pagar, 1984–2023 | {{n_hours}} valid hours, chart datum |
+| Sea-level projections | IPCC AR6 (Garner et al. 2021), PSMSL 1746 | total RSL incl. VLM, medium confidence |
+| Elevation | Copernicus GLO-30 DSM | 1″ (~{{cell_size}} m), EGM2008 heights |
+| Geoid-to-MSL offset | DTU22MDT | {{mdt}} m mean over Singapore Strait cells |
+| Boundaries, population | URA MP2019 planning areas and subzones; SingStat Census 2020 | data.gov.sg |
+| Assets | OSM buildings ({{n_buildings}}) and roads ({{road_km_total}} km); LTA MRT exits ({{n_exits}}) | |
+
+# 2. Methods
+
+**Reference level.** All water levels are metres above the 1995–2014 mean sea level, which is
+{{msl_cd}} m above the Tanjong Pagar chart datum and is also the AR6 baseline, so return levels and
+projections add directly.
+
+**Extremes.** The hourly record is detrended by the linear trend of annual means
+({{trend}} ± {{trend_se}} mm/yr) anchored at 2005. Maxima are taken per July–June season
+({{share_ne_monsoon}} fall in November–February); seasons with less than 80 % data are dropped. A GEV
+is fitted by maximum likelihood (μ = {{gev_mu}}, σ = {{gev_sigma}}, ξ = {{gev_xi}}; bootstrap 95 % range of ξ
+{{xi_lo}} to {{xi_hi}}; Gumbel not rejected, p = {{gumbel_p}}). Return-level intervals come from 1,000
+non-parametric bootstrap resamples. Two cross-checks fall inside the interval: a GPD on
+declustered exceedances of the 99.9th percentile ({{gpd_n}} clusters) gives {{rl100_gpd}} m for 100 years,
+and removing each year's mean instead of a trend gives {{rl100_am}} m.
+
+| Return period | Level (m) | 95 % CI (m) |
+|---|---|---|
+| 10 yr | {{rl10}} | {{rl10_lo}}–{{rl10_hi}} |
+| 100 yr | {{rl100}} | {{rl100_lo}}–{{rl100_hi}} |
+| 1,000 yr | {{rl1000}} | {{rl1000_lo}}–{{rl1000_hi}} |
+
+![Return levels at Tanjong Pagar](../outputs/figures/return_levels.png){width=78%}
+
+**Sea-level rise.** AR6 medians and likely ranges (17th–83rd percentiles) at Tanjong Pagar:
+
+| Scenario | 2050 (m) | 2100 (m) |
+|---|---|---|
+| SSP1-2.6 | {{slr_ssp126_2050}} [{{slr_ssp126_2050_lo}}–{{slr_ssp126_2050_hi}}] | {{slr_ssp126_2100}} [{{slr_ssp126_2100_lo}}–{{slr_ssp126_2100_hi}}] |
+| SSP2-4.5 | {{slr_ssp245_2050}} [{{slr_ssp245_2050_lo}}–{{slr_ssp245_2050_hi}}] | {{slr_ssp245_2100}} [{{slr_ssp245_2100_lo}}–{{slr_ssp245_2100_hi}}] |
+| SSP5-8.5 | {{slr_ssp585_2050}} [{{slr_ssp585_2050_lo}}–{{slr_ssp585_2050_hi}}] | {{slr_ssp585_2100}} [{{slr_ssp585_2100_lo}}–{{slr_ssp585_2100_hi}}] |
+
+The observed trend implies {{obs_rise_2020}} cm of rise from 2005 to 2020, consistent with the AR6
+value of {{ar6_2020}} cm for 2020. The AR6 low-confidence high-end storyline is not included.
+
+**Vertical datum.** Copernicus heights refer to the EGM2008 geoid, but local mean sea level
+lies above the geoid by the mean dynamic topography. Heights are converted with
+z_MSL = z_EGM2008 − {{mdt}} m (DTU22MDT). With the offset, {{below5_mdt}} of the land is below 5 m above MSL,
+against {{below5_raw}} without it; the official figure is about 30 %, and a surface model should
+under-count low ground, so the offset is directionally supported but not validated.
+
+**Connected inundation.** Water cells in GLO-30 are flattened to 0 m. Zero cells linked to the
+raster edge and outside the land polygons are open sea; zero cells inside the land polygons and
+exactly flat patches of ≥ 300 cells are regulated inland water (barrage reservoirs), which
+neither flood nor convey water. A priority flood gives each land cell the minimum still-water
+level at which it connects to the sea; a scenario floods all cells whose fill level is below
+its water level.
+
+**2-D model.** The local-inertial equations (Bates et al. 2010) are solved on the 30 m grid of a
+180 × 180-cell mainland sub-domain ({{m_box}}), forced at sea cells by the observed 1999-12-23
+storm tide raised so its peak equals {{wl_100_ssp585_2100}} m. Verification: analytical front test
+(RMSE {{hunter_rmse}} cm, {{hunter_rel}} of peak depth), lake-at-rest and mass-conservation tests (largest relative
+mass error {{m_mass}}).
+
+**Exposure.** Buildings and MRT exits count if a flooded cell is within ~60 m (the DSM puts
+roof heights at the building itself); roads count where their own cell floods; residents are
+Census 2020 subzone populations scaled by the share of exposed buildings.
+
+# 3. Results
+
+| 100-yr event | Level (m) | Area (km²) [likely] | Mainland (km²) | Buildings | Residents (proxy) | Roads (km) |
+|---|---|---|---|---|---|---|
+| 2020 | {{wl_100_2020}} | {{area_100_2020}} | {{main_100_2020}} | {{bldg_100_2020}} | {{pop_100_2020}} | {{road_100_2020}} |
+| SSP2-4.5 2050 | {{wl_100_ssp245_2050}} | {{area_100_ssp245_2050}} [{{area_100_ssp245_2050_lo}}–{{area_100_ssp245_2050_hi}}] | {{main_100_ssp245_2050}} | {{bldg_100_ssp245_2050}} | {{pop_100_ssp245_2050}} | {{road_100_ssp245_2050}} |
+| SSP1-2.6 2100 | {{wl_100_ssp126_2100}} | {{area_100_ssp126_2100}} [{{area_100_ssp126_2100_lo}}–{{area_100_ssp126_2100_hi}}] | {{main_100_ssp126_2100}} | {{bldg_100_ssp126_2100}} | {{pop_100_ssp126_2100}} | {{road_100_ssp126_2100}} |
+| SSP2-4.5 2100 | {{wl_100_ssp245_2100}} | {{area_100_ssp245_2100}} [{{area_100_ssp245_2100_lo}}–{{area_100_ssp245_2100_hi}}] | {{main_100_ssp245_2100}} | {{bldg_100_ssp245_2100}} | {{pop_100_ssp245_2100}} | {{road_100_ssp245_2100}} |
+| SSP5-8.5 2100 | {{wl_100_ssp585_2100}} | {{area_100_ssp585_2100}} [{{area_100_ssp585_2100_lo}}–{{area_100_ssp585_2100_hi}}] | {{main_100_ssp585_2100}} | {{bldg_100_ssp585_2100}} | {{pop_100_ssp585_2100}} | {{road_100_ssp585_2100}} |
+
+The largest planning-area totals for the 2100 SSP5-8.5 100-yr case are {{top_pa}}. MRT
+stations with an exit within ~60 m of flooding in that case: {{mrt_names_100_ssp585_2100}}.
+
+![Flooded area against water level and datum offset](../outputs/figures/area_vs_level.png){width=78%}
+
+| Sensitivity (100-yr, SSP5-8.5 2100) | Area (km²) |
+|---|---|
+| Central (offset {{mdt}} m, 4-connected) | {{area_100_ssp585_2100}} |
+| Offset −0.3 m / +0.3 m | {{dlo_100_ssp585_2100}} / {{dhi_100_ssp585_2100}} |
+| No offset (geoid = MSL) | {{d0_100_ssp585_2100}} |
+| 8-connected | {{e8_100_ssp585_2100}} |
+| No connectivity check | {{naive_100_ssp585_2100}} |
+
+**2-D model.** Bathtub {{m_bath}} km²; model {{m_base}} km² ({{m_ratio}}); peak held constant {{m_steady}} km²
+({{m_steady_ratio}}). Halving the time step changes the area by {{m_alpha_diff}}, a 90 m grid by {{m_dx90_diff}};
+Manning n from 0.02 to 0.06 gives {{m_n_0.02}} to {{m_n_0.06}} km².
+
+![2-D model against the bathtub](../outputs/figures/model_vs_bathtub.png){width=92%}
+
+# 4. Limitations
+
+1. GLO-30 is a radar surface model (2011–2015) with metre-level vertical error; buildings and
+   canopy raise apparent ground; radar noise and post-acquisition reclamation distort the coast.
+2. The geoid-to-MSL offset comes from a global MDT that is least reliable near coasts.
+3. Defences, gates, pumps, drains, waves, rainfall and compound flooding are not modelled.
+4. {{n_seasons}} seasons of data constrain a 100-yr level only loosely; stationarity of the surge
+   climate is assumed.
+5. Exposure counts are proximity-based proxies, not damage estimates.
+
+# References
+
+* Bates, P. D., Horritt, M. S. & Fewtrell, T. J. (2010). A simple inertial formulation of the shallow water equations for efficient two-dimensional flood inundation modelling. *J. Hydrol.* 387, 33–45.
+* Barnes, R., Lehman, C. & Mulla, D. (2014). Priority-flood: an optimal depression-filling and watershed-labeling algorithm for digital elevation models. *Comput. Geosci.* 62, 117–127.
+* Caldwell, P. C., Merrifield, M. A. & Thompson, P. R. (2015). Sea level measured by tide gauges from global oceans — the Joint Archive for Sea Level holdings. NOAA NCEI, accession 0019568.
+* Coles, S. (2001). *An Introduction to Statistical Modeling of Extreme Values.* Springer.
+* de Almeida, G. A. M., Bates, P., Freer, J. E. & Souvignet, M. (2012). Improving the stability of a simple formulation of the shallow water equations for 2-D flood modeling. *Water Resour. Res.* 48.
+* Fox-Kemper, B. et al. (2021). Ocean, cryosphere and sea level change. In *Climate Change 2021: The Physical Science Basis*, IPCC AR6 WGI, ch. 9.
+* Garner, G. G. et al. (2021). IPCC AR6 sea level projections. Zenodo, 10.5281/zenodo.6382554.
+* Hunter, N. M., Horritt, M. S., Bates, P. D., Wilson, M. D. & Werner, M. G. F. (2005). An adaptive time step solution for raster-based storage cell modelling of floodplain inundation. *Adv. Water Resour.* 28, 975–991.
+* Kulp, S. A. & Strauss, B. H. (2019). New elevation data triple estimates of global vulnerability to sea-level rise and coastal flooding. *Nat. Commun.* 10, 4844.
+* DTU Space. DTU22MDT mean dynamic topography. ftp.space.dtu.dk/pub/DTU22/MDT.

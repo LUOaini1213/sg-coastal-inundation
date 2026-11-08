@@ -1,0 +1,1618 @@
+{
+ "levels": [
+  1.765,
+  1.896,
+  1.91,
+  1.938,
+  1.941,
+  2.072,
+  2.086,
+  2.114,
+  2.146,
+  2.263,
+  2.322,
+  2.439,
+  2.483,
+  2.659
+ ],
+ "scenarios": [
+  {
+   "id": "rp10_2020",
+   "label": "10-yr event, 2020",
+   "rp": 10,
+   "ssp": null,
+   "year": 2020,
+   "wl": 1.765,
+   "rl": 1.719,
+   "slr_p50": 0.046,
+   "slr_p17": 0.014,
+   "slr_p83": 0.079,
+   "band": 1,
+   "area_km2": 6.651,
+   "area_lo": 6.527,
+   "area_hi": 6.755,
+   "buildings": 804,
+   "population": 2030,
+   "road_km": 59.63,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.103,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.131,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 0.709,
+     "buildings": 151,
+     "population": 0
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.34,
+     "buildings": 100,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.228,
+     "buildings": 31,
+     "population": 220
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.22,
+     "buildings": 96,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.134,
+     "buildings": 192,
+     "population": 290
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.12,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.091,
+     "buildings": 13,
+     "population": 20
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.09,
+     "buildings": 23,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.077,
+     "buildings": 21,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.073,
+     "buildings": 21,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp126_2050",
+   "label": "10-yr event, SSP1-2.6 2050",
+   "rp": 10,
+   "ssp": "ssp126",
+   "year": 2050,
+   "wl": 1.896,
+   "rl": 1.719,
+   "slr_p50": 0.177,
+   "slr_p17": 0.102,
+   "slr_p83": 0.267,
+   "band": 2,
+   "area_km2": 7.572,
+   "area_lo": 6.829,
+   "area_hi": 8.037,
+   "buildings": 876,
+   "population": 2430,
+   "road_km": 66.72,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.217,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.217,
+     "buildings": 161,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.186,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.383,
+     "buildings": 106,
+     "population": 0
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.241,
+     "buildings": 107,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.237,
+     "buildings": 32,
+     "population": 230
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.188,
+     "buildings": 18,
+     "population": 20
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.142,
+     "buildings": 216,
+     "population": 330
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.132,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.094,
+     "buildings": 23,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.086,
+     "buildings": 22,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.08,
+     "buildings": 21,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp245_2050",
+   "label": "10-yr event, SSP2-4.5 2050",
+   "rp": 10,
+   "ssp": "ssp245",
+   "year": 2050,
+   "wl": 1.91,
+   "rl": 1.719,
+   "slr_p50": 0.191,
+   "slr_p17": 0.115,
+   "slr_p83": 0.284,
+   "band": 3,
+   "area_km2": 7.749,
+   "area_lo": 6.944,
+   "area_hi": 8.102,
+   "buildings": 899,
+   "population": 2460,
+   "road_km": 67.21,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.223,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.225,
+     "buildings": 161,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.191,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.392,
+     "buildings": 107,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.271,
+     "buildings": 234,
+     "population": 360
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.243,
+     "buildings": 107,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.237,
+     "buildings": 32,
+     "population": 230
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.193,
+     "buildings": 18,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.134,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.096,
+     "buildings": 23,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.089,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.084,
+     "buildings": 21,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp585_2050",
+   "label": "10-yr event, SSP5-8.5 2050",
+   "rp": 10,
+   "ssp": "ssp585",
+   "year": 2050,
+   "wl": 1.938,
+   "rl": 1.719,
+   "slr_p50": 0.219,
+   "slr_p17": 0.143,
+   "slr_p83": 0.314,
+   "band": 4,
+   "area_km2": 7.854,
+   "area_lo": 7.042,
+   "area_hi": 8.265,
+   "buildings": 934,
+   "population": 2470,
+   "road_km": 68.71,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.236,
+     "buildings": 42,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.251,
+     "buildings": 166,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.207,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.4,
+     "buildings": 108,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.274,
+     "buildings": 234,
+     "population": 360
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.246,
+     "buildings": 107,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.243,
+     "buildings": 33,
+     "population": 250
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.204,
+     "buildings": 18,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.137,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.101,
+     "buildings": 25,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.09,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.085,
+     "buildings": 21,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp126_2100",
+   "label": "10-yr event, SSP1-2.6 2100",
+   "rp": 10,
+   "ssp": "ssp126",
+   "year": 2100,
+   "wl": 2.146,
+   "rl": 1.719,
+   "slr_p50": 0.427,
+   "slr_p17": 0.231,
+   "slr_p83": 0.669,
+   "band": 9,
+   "area_km2": 8.762,
+   "area_lo": 7.9,
+   "area_hi": 10.99,
+   "buildings": 1102,
+   "population": 2790,
+   "road_km": 79.52,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.383,
+     "buildings": 49,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.506,
+     "buildings": 223,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.31,
+     "buildings": 49,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.476,
+     "buildings": 116,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.306,
+     "buildings": 271,
+     "population": 410
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.277,
+     "buildings": 21,
+     "population": 20
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.268,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.268,
+     "buildings": 40,
+     "population": 350
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.169,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.117,
+     "buildings": 29,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.104,
+     "buildings": 23,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.096,
+     "buildings": 27,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp245_2100",
+   "label": "10-yr event, SSP2-4.5 2100",
+   "rp": 10,
+   "ssp": "ssp245",
+   "year": 2100,
+   "wl": 2.263,
+   "rl": 1.719,
+   "slr_p50": 0.544,
+   "slr_p17": 0.35,
+   "slr_p83": 0.807,
+   "band": 10,
+   "area_km2": 9.622,
+   "area_lo": 8.414,
+   "area_hi": 12.296,
+   "buildings": 1193,
+   "population": 2890,
+   "road_km": 88.19,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.448,
+     "buildings": 51,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.66,
+     "buildings": 249,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.368,
+     "buildings": 53,
+     "population": 30
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.66,
+     "buildings": 30,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.528,
+     "buildings": 120,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.321,
+     "buildings": 291,
+     "population": 450
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.289,
+     "buildings": 126,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.282,
+     "buildings": 41,
+     "population": 360
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.181,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.126,
+     "buildings": 30,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.117,
+     "buildings": 23,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.104,
+     "buildings": 28,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp10_ssp585_2100",
+   "label": "10-yr event, SSP5-8.5 2100",
+   "rp": 10,
+   "ssp": "ssp585",
+   "year": 2100,
+   "wl": 2.483,
+   "rl": 1.719,
+   "slr_p50": 0.764,
+   "slr_p17": 0.55,
+   "slr_p83": 1.078,
+   "band": 13,
+   "area_km2": 11.639,
+   "area_lo": 9.66,
+   "area_hi": 15.155,
+   "buildings": 1388,
+   "population": 3150,
+   "road_km": 106.7,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.63,
+     "buildings": 71,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 2.309,
+     "buildings": 303,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.555,
+     "buildings": 58,
+     "population": 50
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 1.203,
+     "buildings": 47,
+     "population": 60
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.651,
+     "buildings": 143,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.345,
+     "buildings": 308,
+     "population": 480
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.337,
+     "buildings": 135,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.311,
+     "buildings": 44,
+     "population": 360
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.195,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.161,
+     "buildings": 39,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.136,
+     "buildings": 27,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.13,
+     "buildings": 31,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_2020",
+   "label": "100-yr event, 2020",
+   "rp": 100,
+   "ssp": null,
+   "year": 2020,
+   "wl": 1.941,
+   "rl": 1.895,
+   "slr_p50": 0.046,
+   "slr_p17": 0.014,
+   "slr_p83": 0.079,
+   "band": 5,
+   "area_km2": 7.869,
+   "area_lo": 7.746,
+   "area_hi": 7.99,
+   "buildings": 941,
+   "population": 2500,
+   "road_km": 68.76,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.24,
+     "buildings": 42,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.255,
+     "buildings": 166,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.208,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.402,
+     "buildings": 108,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.274,
+     "buildings": 234,
+     "population": 360
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.246,
+     "buildings": 107,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.243,
+     "buildings": 33,
+     "population": 250
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.204,
+     "buildings": 18,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.137,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.101,
+     "buildings": 25,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.09,
+     "buildings": 24,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.085,
+     "buildings": 21,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp126_2050",
+   "label": "100-yr event, SSP1-2.6 2050",
+   "rp": 100,
+   "ssp": "ssp126",
+   "year": 2050,
+   "wl": 2.072,
+   "rl": 1.895,
+   "slr_p50": 0.177,
+   "slr_p17": 0.102,
+   "slr_p83": 0.267,
+   "band": 6,
+   "area_km2": 8.426,
+   "area_lo": 8.078,
+   "area_hi": 8.843,
+   "buildings": 1042,
+   "population": 2720,
+   "road_km": 74.71,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.34,
+     "buildings": 42,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.426,
+     "buildings": 206,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.262,
+     "buildings": 38,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.439,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.292,
+     "buildings": 258,
+     "population": 400
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.261,
+     "buildings": 40,
+     "population": 350
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.259,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.253,
+     "buildings": 20,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.155,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.112,
+     "buildings": 28,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.099,
+     "buildings": 21,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.093,
+     "buildings": 26,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp245_2050",
+   "label": "100-yr event, SSP2-4.5 2050",
+   "rp": 100,
+   "ssp": "ssp245",
+   "year": 2050,
+   "wl": 2.086,
+   "rl": 1.895,
+   "slr_p50": 0.191,
+   "slr_p17": 0.115,
+   "slr_p83": 0.284,
+   "band": 7,
+   "area_km2": 8.495,
+   "area_lo": 8.135,
+   "area_hi": 9.001,
+   "buildings": 1045,
+   "population": 2720,
+   "road_km": 75.64,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.35,
+     "buildings": 42,
+     "population": 0
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.456,
+     "buildings": 208,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.272,
+     "buildings": 38,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.444,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.292,
+     "buildings": 258,
+     "population": 400
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.261,
+     "buildings": 40,
+     "population": 350
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.26,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.256,
+     "buildings": 20,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.158,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.112,
+     "buildings": 28,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.1,
+     "buildings": 21,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.093,
+     "buildings": 26,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp585_2050",
+   "label": "100-yr event, SSP5-8.5 2050",
+   "rp": 100,
+   "ssp": "ssp585",
+   "year": 2050,
+   "wl": 2.114,
+   "rl": 1.895,
+   "slr_p50": 0.219,
+   "slr_p17": 0.143,
+   "slr_p83": 0.314,
+   "band": 8,
+   "area_km2": 8.625,
+   "area_lo": 8.289,
+   "area_hi": 9.124,
+   "buildings": 1078,
+   "population": 2770,
+   "road_km": 77.22,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.363,
+     "buildings": 49,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.472,
+     "buildings": 215,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.289,
+     "buildings": 49,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.469,
+     "buildings": 116,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.295,
+     "buildings": 258,
+     "population": 400
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.266,
+     "buildings": 113,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.265,
+     "buildings": 40,
+     "population": 350
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.264,
+     "buildings": 20,
+     "population": 20
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.159,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.115,
+     "buildings": 29,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.102,
+     "buildings": 21,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.095,
+     "buildings": 27,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp126_2100",
+   "label": "100-yr event, SSP1-2.6 2100",
+   "rp": 100,
+   "ssp": "ssp126",
+   "year": 2100,
+   "wl": 2.322,
+   "rl": 1.895,
+   "slr_p50": 0.427,
+   "slr_p17": 0.231,
+   "slr_p83": 0.669,
+   "band": 11,
+   "area_km2": 10.029,
+   "area_lo": 8.673,
+   "area_hi": 12.642,
+   "buildings": 1264,
+   "population": 3020,
+   "road_km": 92.76,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.535,
+     "buildings": 59,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 1.742,
+     "buildings": 268,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.431,
+     "buildings": 54,
+     "population": 30
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 0.715,
+     "buildings": 35,
+     "population": 20
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.561,
+     "buildings": 122,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.329,
+     "buildings": 304,
+     "population": 470
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.3,
+     "buildings": 128,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.29,
+     "buildings": 44,
+     "population": 360
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.183,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.137,
+     "buildings": 35,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.123,
+     "buildings": 27,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.114,
+     "buildings": 30,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp245_2100",
+   "label": "100-yr event, SSP2-4.5 2100",
+   "rp": 100,
+   "ssp": "ssp245",
+   "year": 2100,
+   "wl": 2.439,
+   "rl": 1.895,
+   "slr_p50": 0.544,
+   "slr_p17": 0.35,
+   "slr_p83": 0.807,
+   "band": 12,
+   "area_km2": 11.329,
+   "area_lo": 9.294,
+   "area_hi": 14.139,
+   "buildings": 1344,
+   "population": 3130,
+   "road_km": 103.87,
+   "mrt_stations": 1,
+   "station_names": [
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.602,
+     "buildings": 60,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 2.199,
+     "buildings": 293,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.532,
+     "buildings": 57,
+     "population": 40
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 1.16,
+     "buildings": 45,
+     "population": 50
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.62,
+     "buildings": 133,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.344,
+     "buildings": 308,
+     "population": 480
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.331,
+     "buildings": 132,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.305,
+     "buildings": 44,
+     "population": 360
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.192,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.148,
+     "buildings": 39,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.133,
+     "buildings": 27,
+     "population": 0
+    },
+    {
+     "planning_area": "Pioneer",
+     "area_km2": 0.121,
+     "buildings": 31,
+     "population": 0
+    }
+   ]
+  },
+  {
+   "id": "rp100_ssp585_2100",
+   "label": "100-yr event, SSP5-8.5 2100",
+   "rp": 100,
+   "ssp": "ssp585",
+   "year": 2100,
+   "wl": 2.659,
+   "rl": 1.895,
+   "slr_p50": 0.764,
+   "slr_p17": 0.55,
+   "slr_p83": 1.078,
+   "band": 14,
+   "area_km2": 13.737,
+   "area_lo": 11.377,
+   "area_hi": 18.268,
+   "buildings": 1558,
+   "population": 3460,
+   "road_km": 134.5,
+   "mrt_stations": 3,
+   "station_names": [
+    "Marina Bay Mrt Station",
+    "Marina South Mrt Station",
+    "Marina South Pier Mrt Station"
+   ],
+   "by_pa": [
+    {
+     "planning_area": "North-Eastern Islands",
+     "area_km2": 3.71,
+     "buildings": 75,
+     "population": 10
+    },
+    {
+     "planning_area": "Western Islands",
+     "area_km2": 3.154,
+     "buildings": 374,
+     "population": 0
+    },
+    {
+     "planning_area": "Queenstown",
+     "area_km2": 1.636,
+     "buildings": 65,
+     "population": 50
+    },
+    {
+     "planning_area": "Changi",
+     "area_km2": 1.419,
+     "buildings": 52,
+     "population": 60
+    },
+    {
+     "planning_area": "Tuas",
+     "area_km2": 0.762,
+     "buildings": 157,
+     "population": 0
+    },
+    {
+     "planning_area": "Jurong East",
+     "area_km2": 0.399,
+     "buildings": 138,
+     "population": 0
+    },
+    {
+     "planning_area": "Southern Islands",
+     "area_km2": 0.378,
+     "buildings": 321,
+     "population": 490
+    },
+    {
+     "planning_area": "Straits View",
+     "area_km2": 0.336,
+     "buildings": 11,
+     "population": 0
+    },
+    {
+     "planning_area": "Bukit Merah",
+     "area_km2": 0.33,
+     "buildings": 47,
+     "population": 410
+    },
+    {
+     "planning_area": "Western Water Catchment",
+     "area_km2": 0.204,
+     "buildings": 0,
+     "population": 0
+    },
+    {
+     "planning_area": "Seletar",
+     "area_km2": 0.193,
+     "buildings": 30,
+     "population": 0
+    },
+    {
+     "planning_area": "Boon Lay",
+     "area_km2": 0.181,
+     "buildings": 41,
+     "population": 0
+    }
+   ]
+  }
+ ],
+ "tide": {
+  "rl": {
+   "2": {
+    "rl": 1.59,
+    "lo": 1.566,
+    "hi": 1.617
+   },
+   "10": {
+    "rl": 1.719,
+    "lo": 1.663,
+    "hi": 1.777
+   },
+   "50": {
+    "rl": 1.841,
+    "lo": 1.711,
+    "hi": 2.001
+   },
+   "100": {
+    "rl": 1.895,
+    "lo": 1.724,
+    "hi": 2.146
+   },
+   "1000": {
+    "rl": 2.086,
+    "lo": 1.747,
+    "hi": 2.875
+   }
+  }
+ },
+ "ar6": {
+  "ssp126": {
+   "2020": {
+    "p05": -0.016,
+    "p17": 0.009,
+    "p50": 0.044,
+    "p83": 0.081,
+    "p95": 0.107
+   },
+   "2030": {
+    "p05": 0.005,
+    "p17": 0.036,
+    "p50": 0.082,
+    "p83": 0.133,
+    "p95": 0.172
+   },
+   "2040": {
+    "p05": 0.026,
+    "p17": 0.063,
+    "p50": 0.122,
+    "p83": 0.191,
+    "p95": 0.244
+   },
+   "2050": {
+    "p05": 0.055,
+    "p17": 0.102,
+    "p50": 0.177,
+    "p83": 0.267,
+    "p95": 0.34
+   },
+   "2060": {
+    "p05": 0.071,
+    "p17": 0.127,
+    "p50": 0.22,
+    "p83": 0.334,
+    "p95": 0.428
+   },
+   "2070": {
+    "p05": 0.097,
+    "p17": 0.163,
+    "p50": 0.277,
+    "p83": 0.421,
+    "p95": 0.536
+   },
+   "2080": {
+    "p05": 0.112,
+    "p17": 0.191,
+    "p50": 0.328,
+    "p83": 0.5,
+    "p95": 0.644
+   },
+   "2090": {
+    "p05": 0.127,
+    "p17": 0.218,
+    "p50": 0.376,
+    "p83": 0.579,
+    "p95": 0.746
+   },
+   "2100": {
+    "p05": 0.116,
+    "p17": 0.231,
+    "p50": 0.427,
+    "p83": 0.669,
+    "p95": 0.865
+   }
+  },
+  "ssp245": {
+   "2020": {
+    "p05": -0.009,
+    "p17": 0.014,
+    "p50": 0.046,
+    "p83": 0.079,
+    "p95": 0.105
+   },
+   "2030": {
+    "p05": 0.015,
+    "p17": 0.043,
+    "p50": 0.085,
+    "p83": 0.133,
+    "p95": 0.169
+   },
+   "2040": {
+    "p05": 0.038,
+    "p17": 0.074,
+    "p50": 0.13,
+    "p83": 0.197,
+    "p95": 0.249
+   },
+   "2050": {
+    "p05": 0.068,
+    "p17": 0.115,
+    "p50": 0.191,
+    "p83": 0.284,
+    "p95": 0.356
+   },
+   "2060": {
+    "p05": 0.098,
+    "p17": 0.155,
+    "p50": 0.248,
+    "p83": 0.367,
+    "p95": 0.461
+   },
+   "2070": {
+    "p05": 0.133,
+    "p17": 0.202,
+    "p50": 0.318,
+    "p83": 0.471,
+    "p95": 0.588
+   },
+   "2080": {
+    "p05": 0.163,
+    "p17": 0.246,
+    "p50": 0.388,
+    "p83": 0.577,
+    "p95": 0.724
+   },
+   "2090": {
+    "p05": 0.196,
+    "p17": 0.292,
+    "p50": 0.462,
+    "p83": 0.687,
+    "p95": 0.866
+   },
+   "2100": {
+    "p05": 0.238,
+    "p17": 0.35,
+    "p50": 0.544,
+    "p83": 0.807,
+    "p95": 1.027
+   }
+  },
+  "ssp585": {
+   "2020": {
+    "p05": -0.005,
+    "p17": 0.015,
+    "p50": 0.042,
+    "p83": 0.073,
+    "p95": 0.095
+   },
+   "2030": {
+    "p05": 0.021,
+    "p17": 0.048,
+    "p50": 0.09,
+    "p83": 0.137,
+    "p95": 0.173
+   },
+   "2040": {
+    "p05": 0.05,
+    "p17": 0.088,
+    "p50": 0.148,
+    "p83": 0.219,
+    "p95": 0.275
+   },
+   "2050": {
+    "p05": 0.095,
+    "p17": 0.143,
+    "p50": 0.219,
+    "p83": 0.314,
+    "p95": 0.392
+   },
+   "2060": {
+    "p05": 0.136,
+    "p17": 0.195,
+    "p50": 0.292,
+    "p83": 0.418,
+    "p95": 0.524
+   },
+   "2070": {
+    "p05": 0.193,
+    "p17": 0.264,
+    "p50": 0.387,
+    "p83": 0.55,
+    "p95": 0.69
+   },
+   "2080": {
+    "p05": 0.258,
+    "p17": 0.343,
+    "p50": 0.494,
+    "p83": 0.701,
+    "p95": 0.88
+   },
+   "2090": {
+    "p05": 0.343,
+    "p17": 0.442,
+    "p50": 0.621,
+    "p83": 0.877,
+    "p95": 1.097
+   },
+   "2100": {
+    "p05": 0.43,
+    "p17": 0.55,
+    "p50": 0.764,
+    "p83": 1.078,
+    "p95": 1.353
+   }
+  }
+ },
+ "model_box": [
+  103.9814,
+  1.3758,
+  104.0314,
+  1.4258
+ ],
+ "model": {
+  "bathtub_area_km2": 3.268,
+  "base_vs_bathtub_ratio": 0.96,
+  "steady_vs_bathtub_ratio": 1.009,
+  "base_area_km2": 3.1383
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "scenario": "rp100_ssp585_2100",
+ "wl": 2.659,
+ "box_rows_cols": [
+  195,
+  1409,
+  180
+ ],
+ "box_lonlat": [
+  103.9814,
+  1.3758,
+  104.0314,
+  1.4258
+ ],
+ "hydrograph_hours": 72.0,
+ "depth_min_m": 0.05,
+ "bathtub_area_km2": 3.268,
+ "runs": {
+  "base": {
+   "area_km2": 3.1383,
+   "volume_m3": 4117328.104621821,
+   "steps": 65090,
+   "seconds": 374.3,
+   "mass_error_rel": 1.1794676365118396e-14
+  },
+  "steady": {
+   "area_km2": 3.2958,
+   "volume_m3": 4596867.839654355,
+   "steps": 75456,
+   "seconds": 259.6,
+   "mass_error_rel": 1.2473262276990771e-14
+  },
+  "alpha_0.35": {
+   "area_km2": 3.1383,
+   "volume_m3": 4110967.6413029297,
+   "steps": 130177,
+   "seconds": 268.0,
+   "mass_error_rel": 2.518945649396843e-14
+  },
+  "n_0.02": {
+   "area_km2": 3.2229,
+   "volume_m3": 4302275.970738196,
+   "steps": 66020,
+   "seconds": 122.2,
+   "mass_error_rel": 9.042601748104904e-15
+  },
+  "n_0.06": {
+   "area_km2": 3.0015,
+   "volume_m3": 3993100.88475261,
+   "steps": 65195,
+   "seconds": 117.7,
+   "mass_error_rel": 1.7865363394027902e-14
+  },
+  "dx_60": {
+   "area_km2": 3.0204,
+   "volume_m3": 3886480.252462795,
+   "steps": 31057,
+   "seconds": 17.5,
+   "mass_error_rel": 1.1813914239882784e-14
+  },
+  "dx_90": {
+   "area_km2": 2.9808,
+   "volume_m3": 3867836.809686949,
+   "steps": 25920,
+   "seconds": 9.0,
+   "mass_error_rel": 5.014604675061695e-15
+  }
+ },
+ "base_vs_bathtub_ratio": 0.96,
+ "steady_vs_bathtub_ratio": 1.009,
+ "cells_both": 3472,
+ "cells_bathtub_only": 159,
+ "cells_model_only": 15
+}

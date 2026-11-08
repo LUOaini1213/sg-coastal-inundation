@@ -1,0 +1,27 @@
+{
+ "mdt": {
+  "mean": 1.1499055555555555,
+  "min": 1.1460251,
+  "max": 1.1521312,
+  "n": 18
+ },
+ "datum_offset_m": 1.15,
+ "sg_land_km2": 690.5,
+ "share_land_below_5m": {
+  "mdt": 0.2,
+  "no_shift": 0.129
+ },
+ "cell_size_m": 30.9,
+ "grid_shape": [
+  1188,
+  1836
+ ],
+ "osm_buildings": 126346,
+ "buildings_in_subzones": 126308,
+ "road_km_in_sg": 10107.8,
+ "mrt_exits": 613,
+ "mrt_stations": 188,
+ "census_pop_subzone_sum": 4044340,
+ "census_pop_matched": 4044340,
+ "unmatched_subzones": []
+}

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Singapore Coastal Inundation Explorer</title>
+<meta name="description" content="Screening-level coastal flood exposure for Singapore under extreme sea levels and IPCC AR6 sea-level rise. Independent personal project; not an official flood map.">
+<link href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" rel="stylesheet">
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<style>
+:root {
+  --surface: #fcfcfb; --panel: #ffffff; --border: #e3e2de;
+  --text: #0b0b0b; --text-2: #52514e; --muted: #8a8984;
+  --accent: #2a78d6; --accent-soft: #cde2fb;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --base: #8a8984;
+  --warn-bg: #fff4e5; --warn-text: #7a4a00;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --surface: #1a1a19; --panel: #222220; --border: #3a3a37;
+    --text: #f0efec; --text-2: #c3c2b7; --muted: #9a998f;
+    --accent: #3987e5; --accent-soft: #184f95;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --base: #9a998f;
+    --warn-bg: #3a2c12; --warn-text: #f3d39b;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --surface: #1a1a19; --panel: #222220; --border: #3a3a37;
+  --text: #f0efec; --text-2: #c3c2b7; --muted: #9a998f;
+  --accent: #3987e5; --accent-soft: #184f95;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --base: #9a998f;
+  --warn-bg: #3a2c12; --warn-text: #f3d39b;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--surface); color: var(--text);
+  font: 14px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+.app { display: grid; grid-template-columns: 400px 1fr; height: 100vh; }
+.panel { overflow-y: auto; padding: 16px 18px 28px; border-right: 1px solid var(--border); background: var(--panel); }
+#map { height: 100%; }
+h1 { font-size: 19px; margin: 0 0 4px; }
+.sub { color: var(--text-2); margin: 0 0 12px; }
+.warn { background: var(--warn-bg); color: var(--warn-text); padding: 8px 10px; border-radius: 6px; font-size: 12.5px; margin-bottom: 14px; }
+label.h { display: block; font-weight: 600; margin: 12px 0 6px; font-size: 13px; }
+.seg { display: flex; gap: 6px; flex-wrap: wrap; }
+.seg button { border: 1px solid var(--border); background: transparent; color: var(--text); border-radius: 6px;
+  padding: 5px 10px; cursor: pointer; font: inherit; font-size: 13px; }
+.seg button[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #fff; }
+.wl { margin: 10px 0 4px; color: var(--text-2); font-size: 13px; }
+.wl b { color: var(--text); font-variant-numeric: tabular-nums; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 10px 0; }
+.tile { border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; }
+.tile .k { color: var(--text-2); font-size: 12px; }
+.tile .v { font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.tile .r { color: var(--muted); font-size: 11.5px; font-variant-numeric: tabular-nums; }
+h2 { font-size: 14px; margin: 18px 0 6px; }
+.chart svg { width: 100%; height: auto; display: block; }
+.chart text { fill: var(--text-2); font-size: 10.5px; }
+.legend { display: flex; gap: 12px; flex-wrap: wrap; font-size: 12px; color: var(--text-2); margin: 4px 0; }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+table { width: 100%; border-collapse: collapse; font-size: 12.5px; font-variant-numeric: tabular-nums; }
+th, td { text-align: right; padding: 3px 4px; border-bottom: 1px solid var(--border); }
+th:first-child, td:first-child { text-align: left; }
+th { color: var(--text-2); font-weight: 600; }
+.tip { position: fixed; pointer-events: none; background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 8px; font-size: 12px; box-shadow: 0 2px 8px rgba(0,0,0,.15); display: none; z-index: 10; }
+.foot { color: var(--muted); font-size: 11.5px; margin-top: 16px; }
+.foot a { color: var(--accent); }
+.toggle { display: flex; align-items: center; gap: 6px; font-size: 13px; margin-top: 8px; }
+.maplegend { position: absolute; right: 10px; bottom: 28px; background: var(--panel); color: var(--text); border: 1px solid var(--border);
+  border-radius: 6px; padding: 6px 8px; font-size: 12px; }
+@media (max-width: 860px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 55vh auto; height: auto; }
+  #map { height: 55vh; grid-row: 1; }
+  .panel { grid-row: 2; border-right: 0; padding: 14px 16px; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="panel">
+    <h1>Singapore coastal inundation explorer</h1>
+    <p class="sub">Still-water flooding from extreme sea levels plus IPCC AR6 sea-level rise, with hydraulic connectivity.</p>
+    <div class="warn"><b>Screening study, not an official flood map.</b> Coastal defences, drainage, waves and rainfall are not modelled, and the 30 m DEM is a surface model (buildings and trees included). Independent personal project; not affiliated with NUS, TMSI or PUB.</div>
+
+    <label class="h">Extreme event (return period)</label>
+    <div class="seg" id="rp"></div>
+    <label class="h">Sea level</label>
+    <div class="seg" id="state"></div>
+    <p class="wl" id="wl"></p>
+
+    <div class="tiles" id="tiles"></div>
+
+    <h2>Flooded land by scenario</h2>
+    <div class="legend" id="chartlegend"></div>
+    <div class="chart" id="chart"></div>
+
+    <h2>Most affected planning areas</h2>
+    <table id="pa"><thead><tr><th>Planning area</th><th>km²</th><th>Buildings</th><th>Residents*</th></tr></thead><tbody></tbody></table>
+
+    <label class="toggle"><input type="checkbox" id="modeltoggle"> Show 2-D model vs bathtub (100-yr, SSP5-8.5 2100 sub-domain)</label>
+
+    <p class="foot">*Residents: Census 2020 subzone population shared out by the fraction of OSM buildings within ~60 m of flooded cells. MRT: stations with an LTA exit within ~60 m of a flooded cell.
+      Data: UHSLC, IPCC AR6 (Garner et al. 2021), Copernicus GLO-30, DTU22MDT, URA/SingStat/LTA via data.gov.sg (Singapore Open Data Licence), © OpenStreetMap contributors (ODbL).
+      <a href="https://github.com/LUOaini1213/sg-coastal-inundation">Code, method and limitations</a> · <a href="report.pdf">Technical report (PDF)</a></p>
+  </div>
+  <div id="map" role="region" aria-label="Map of flooded areas"></div>
+</div>
+<div class="tip" id="tip"></div>
+<script>
+const fmt = (v, d = 0) => Number(v).toLocaleString('en-US', { minimumFractionDigits: d, maximumFractionDigits: d });
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const STATES = [
+  { key: '2020', label: '2020' },
+  { key: 'ssp126_2050', label: 'SSP1-2.6 2050' }, { key: 'ssp245_2050', label: 'SSP2-4.5 2050' }, { key: 'ssp585_2050', label: 'SSP5-8.5 2050' },
+  { key: 'ssp126_2100', label: 'SSP1-2.6 2100' }, { key: 'ssp245_2100', label: 'SSP2-4.5 2100' }, { key: 'ssp585_2100', label: 'SSP5-8.5 2100' },
+];
+const SSPCOL = { null: '--base', ssp126: '--s1', ssp245: '--s3', ssp585: '--s2' };
+let DATA, sel = { rp: 100, state: 'ssp585_2100' }, map, mapReady = false;
+
+function scen() { return DATA.scenarios.find(s => s.id === `rp${sel.rp}_${sel.state}`); }
+
+function buttons(el, items, cur, onpick) {
+  el.innerHTML = '';
+  for (const it of items) {
+    const b = document.createElement('button');
+    b.textContent = it.label; b.setAttribute('aria-pressed', String(it.key == cur));
+    b.onclick = () => onpick(it.key); el.appendChild(b);
+  }
+}
+
+function render() {
+  buttons(document.getElementById('rp'), [{ key: 10, label: '10-year' }, { key: 100, label: '100-year' }], sel.rp, k => { sel.rp = +k; render(); });
+  buttons(document.getElementById('state'), STATES, sel.state, k => { sel.state = k; render(); });
+  const s = scen();
+  document.getElementById('wl').innerHTML = `Still-water level <b>${fmt(s.wl, 2)} m</b> above MSL (1995–2014) = ${s.rp}-yr extreme ${fmt(s.rl, 2)} m + AR6 sea-level rise ${fmt(s.slr_p50, 2)} m (likely ${fmt(s.slr_p17, 2)}–${fmt(s.slr_p83, 2)} m)`;
+  const t = [
+    ['Flooded land', `${fmt(s.area_km2, 1)} km²`, `likely range ${fmt(s.area_lo, 1)}–${fmt(s.area_hi, 1)}`],
+    ['Buildings near flooding', fmt(s.buildings), 'OSM footprints, ~60 m'],
+    ['Residents (proxy)*', fmt(s.population), 'Census 2020, building-weighted'],
+    ['Roads in flooded cells', `${fmt(s.road_km, 0)} km`, 'OSM road centrelines'],
+    ['MRT stations*', fmt(s.mrt_stations), s.station_names.slice(0, 3).map(n => n.replace(/ Mrt Station$/, '')).join(', ') + (s.station_names.length > 3 ? '…' : '')],
+  ];
+  document.getElementById('tiles').innerHTML = t.map(([k, v, r]) => `<div class="tile"><div class="k">${k}</div><div class="v">${v}</div><div class="r">${r}</div></div>`).join('');
+  const tb = document.querySelector('#pa tbody');
+  tb.innerHTML = s.by_pa.slice(0, 8).map(p => `<tr><td>${p.planning_area}</td><td>${fmt(p.area_km2, 2)}</td><td>${fmt(p.buildings)}</td><td>${fmt(p.population)}</td></tr>`).join('') || '<tr><td colspan="4">No flooded land</td></tr>';
+  chart();
+  if (mapReady) {
+    map.setFilter('flood', ['<=', ['get', 'b'], s.band]);
+  }
+}
+
+function chart() {
+  const list = DATA.scenarios.filter(s => s.rp === sel.rp);
+  const W = 360, H = 190, L = 34, B = 34, T = 8, bw = 30;
+  const ymax = Math.ceil(Math.max(...DATA.scenarios.map(s => s.area_hi)) / 5) * 5;
+  const y = v => T + (H - T - B) * (1 - v / ymax);
+  const step = (W - L - 6) / list.length;
+  let g = '';
+  for (let v = 0; v <= ymax; v += 5) g += `<line x1="${L}" x2="${W}" y1="${y(v)}" y2="${y(v)}" stroke="${css('--border')}" stroke-width="1"/><text x="${L - 4}" y="${y(v) + 3}" text-anchor="end">${v}</text>`;
+  list.forEach((s, i) => {
+    const x = L + i * step + (step - bw) / 2, col = css(SSPCOL[s.ssp]);
+    const on = s.id === scen().id;
+    const top = y(s.area_km2), h = y(0) - top;
+    g += `<path d="M${x},${y(0)} v${-(h - 4)} q0,-4 4,-4 h${bw - 8} q4,0 4,4 v${h - 4} z" fill="${col}" opacity="${on ? 1 : 0.55}" data-i="${i}"/>`;
+    g += `<line x1="${x + bw / 2}" x2="${x + bw / 2}" y1="${y(s.area_lo)}" y2="${y(s.area_hi)}" stroke="${css('--text-2')}" stroke-width="1.5"/>`;
+    g += `<text x="${x + bw / 2}" y="${H - B + 13}" text-anchor="middle">${s.year}</text>`;
+    g += `<rect x="${L + i * step}" y="${T}" width="${step}" height="${H - T - B}" fill="transparent" data-i="${i}" style="cursor:pointer"/>`;
+  });
+  g += `<text x="4" y="${T + 6}">km²</text>`;
+  const el = document.getElementById('chart');
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Flooded land area by scenario">${g}</svg>`;
+  document.getElementById('chartlegend').innerHTML = [['2020 baseline', '--base'], ['SSP1-2.6', '--s1'], ['SSP2-4.5', '--s3'], ['SSP5-8.5', '--s2']]
+    .map(([n, c]) => `<span><span class="sw" style="background:${css(c)}"></span>${n}</span>`).join('') + '<span>whisker = AR6 likely range</span>';
+  const tip = document.getElementById('tip');
+  el.querySelectorAll('[data-i]').forEach(r => {
+    const s = list[+r.dataset.i];
+    r.addEventListener('mousemove', e => { tip.style.display = 'block'; tip.style.left = e.clientX + 12 + 'px'; tip.style.top = e.clientY + 12 + 'px';
+      tip.innerHTML = `<b>${s.label}</b><br>${fmt(s.area_km2, 1)} km² (likely ${fmt(s.area_lo, 1)}–${fmt(s.area_hi, 1)})<br>water level ${fmt(s.wl, 2)} m`; });
+    r.addEventListener('mouseleave', () => tip.style.display = 'none');
+    r.addEventListener('click', () => { sel.state = s.id.replace(/^rp\d+_/, ''); render(); });
+  });
+}
+
+function initMap() {
+  map = new maplibregl.Map({ container: 'map', style: 'https://tiles.openfreemap.org/styles/positron',
+    center: [103.82, 1.35], zoom: 10.4, attributionControl: { compact: true } });
+  map.addControl(new maplibregl.NavigationControl(), 'top-right');
+  map.on('load', () => {
+    map.addSource('flood', { type: 'geojson', data: 'data/flood_bands.geojson' });
+    map.addSource('pa', { type: 'geojson', data: 'data/planning_areas.geojson' });
+    map.addSource('model', { type: 'geojson', data: 'data/model_compare.geojson' });
+    map.addLayer({ id: 'pa-line', type: 'line', source: 'pa', paint: { 'line-color': '#7d7c78', 'line-width': 0.6, 'line-opacity': 0.6 } });
+    map.addLayer({ id: 'flood', type: 'fill', source: 'flood', paint: { 'fill-color': '#1c5cab', 'fill-opacity': 0.65 } });
+    map.addLayer({ id: 'model', type: 'fill', source: 'model', layout: { visibility: 'none' },
+      paint: { 'fill-color': ['match', ['get', 'c'], 2, '#1c5cab', '#eb6834'], 'fill-opacity': 0.75 } });
+    mapReady = true; render();
+  });
+  const lg = document.createElement('div'); lg.className = 'maplegend'; lg.id = 'maplegend';
+  lg.innerHTML = '<span class="sw" style="background:#1c5cab"></span>Flooded (bathtub, connected to sea)';
+  document.getElementById('map').appendChild(lg);
+  document.getElementById('modeltoggle').addEventListener('change', e => {
+    const on = e.target.checked;
+    map.setLayoutProperty('model', 'visibility', on ? 'visible' : 'none');
+    map.setLayoutProperty('flood', 'visibility', on ? 'none' : 'visible');
+    lg.innerHTML = on ? '<span class="sw" style="background:#1c5cab"></span>Flooded in 2-D model &nbsp;<span class="sw" style="background:#eb6834"></span>Bathtub only'
+                      : '<span class="sw" style="background:#1c5cab"></span>Flooded (bathtub, connected to sea)';
+    if (on) { const b = DATA.model_box; map.fitBounds([[b[0], b[1]], [b[2], b[3]]], { padding: 30 }); sel = { rp: 100, state: 'ssp585_2100' }; render(); }
+  });
+}
+
+fetch('data/scenarios.json').then(r => r.json()).then(d => { DATA = d; render(); initMap(); });
+</script>
+</body>
+</html>
